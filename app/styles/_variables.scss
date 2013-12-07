@@ -1,4 +1,8 @@
 $white : #fafafa;
 $black : #333;
-$divider_color : #eeeeee;
+$divider_color : darken(#eeeeee, 10%);
 $gray_text : #999;
+
+$hr-default-padding : 1em;
+$hr-padding-left : 1em;
+$hr-padding-right : 1em;

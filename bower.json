@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~1.10.2",
     "bootstrap": "~3.0.3",
-    "lorem": "*"
+    "lorem": "*",
+    "semantic": "~0.10.0"
   },
   "devDependencies": {}
 }

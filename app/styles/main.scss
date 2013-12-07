@@ -134,4 +134,7 @@ body {
 
 .nav.nav-pills.nav-stacked li > a {
   @include border-radius(0px);
+
+  padding-top    : 0;
+  padding-bottom : 0;
 }

@@ -2,3 +2,4 @@ django==1.6
 django-taggit==0.11.1
 south==0.8.4
 python-social-auth==0.1.17
+psycopg2==2.5.1

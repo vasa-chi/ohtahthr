@@ -29,8 +29,8 @@ class Vacancy(Base):
 
     """
     VACANCY_TYPE_CHOICES = ((1, u"Вакансия из парада"),
-                            (2, u"Вакансия из историй",
-                            (3, u"Вакансия мечты"))
+                            (2, u"Вакансия из историй"),
+                            (3, u"Вакансия мечты")
                             )
     type = models.PositiveSmallIntegerField(verbose_name=u"тип вакансии", choices=VACANCY_TYPE_CHOICES)
     why = models.TextField(verbose_name=u"Почему добавлена", null=True, blank=True)

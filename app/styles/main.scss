@@ -13,8 +13,16 @@ body {
   padding-top      : 70px;
 }
 
-.hr-list {
+.hr-container {
   background-color : darken($white, 5%);
+}
+
+.hr-settings {
+  @include box-shadow(transparentize($black, 0.8) 0px 0px 2px 1px);
+
+  padding          : $hr-default-padding;
+
+  background-color : $white;
 }
 
 .hr-row {
@@ -124,6 +132,6 @@ body {
 
 }
 
-.nav.nav-pills.nav-stacked li>a {
+.nav.nav-pills.nav-stacked li > a {
   @include border-radius(0px);
 }

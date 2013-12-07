@@ -1,0 +1,67 @@
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "variables";
+
+html, body {
+  height : 100%;
+}
+
+body {
+  background-color : darken($white, 5%);
+  font-family      : "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color            : $black;
+  padding-top      : 70px;
+}
+
+.hr-row {
+  margin-bottom : 1.5em;
+
+  .hr-item {
+    @include border-radius(4px, 4px);
+    @include box-shadow(transparentize($black, 0.8) 0px 0px 10px 5px);
+
+    padding-left     : 0;
+    padding-right    : 0;
+
+    background-color : $white;
+
+    .hr-head {
+      width         : 100%;
+      border-bottom : 1px solid $divider_color;
+      margin-bottom : 10px;
+
+      .hr-head-info {
+        @include border-top-right-radius(4px);
+
+        font-size        : 75%;
+        color            : $gray_text;
+        padding          : 0.3em;
+        background-color : darken($white, 10%);
+
+        .hr-username, .hr-postdate {
+          &:hover {
+            text-decoration : underline;
+            cursor          : pointer;
+          }
+        }
+      }
+
+      h1 {
+        padding-top   : 10px;
+        margin-top    : 0px;
+        margin-bottom : 10px;
+        padding-left  : 1em;
+        padding-right : 1em;
+      }
+    }
+
+    .hr-body {
+      padding-left  : 1em;
+      padding-right : 1em;
+    }
+
+    .hr-footer {
+
+    }
+  }
+}

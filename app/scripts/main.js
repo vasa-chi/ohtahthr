@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+(function($) {
+  $('.container:first').ipsum();
+}(jQuery));

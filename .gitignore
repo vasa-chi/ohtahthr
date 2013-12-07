@@ -1,0 +1,52 @@
+### Linux ###
+.*
+*~
+
+### OS X ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### Windows ###
+# Image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+### Python cache ###
+*.py[cod]
+__pycache__
+
+### SASS ###
+*.sass-cache
+
+### PyCharm ###
+.idea
+
+### Django ###
+local_settings.py
+
+### logs ###
+logs/*
+
+### Git ###
+.gitconfig
+!.gitkeep
+
+uwsgi_local.yaml
+celerybeat_local
+celeryd_local
+nginx_local.conf

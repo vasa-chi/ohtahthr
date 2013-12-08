@@ -136,6 +136,12 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates/"),
 )
 
+TEMPLATE_LOADERS = (
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader",
+    # "django.template.loaders.eggs.Loader",
+)
+
 ROOT_URLCONF = "ohthathr.urls"
 
 WSGI_APPLICATION = "ohthathr.wsgi.application"
@@ -144,7 +150,7 @@ WSGI_APPLICATION = "ohthathr.wsgi.application"
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-RU"
 
 TIME_ZONE = "UTC"
 

@@ -1,48 +1,61 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}ohthathr{% endblock %}</title>
-        {% block style %}
-            <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
-        {% endblock %}
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                {% include "navigation.html" %}
-                <div class="col-md-10 col-md-offset-2 hr-container">
-                    <nav class="navbar navbar-default navbar-static-top hr-navbar" role="navigation">
-                        <div class="collapse navbar-collapse">
-                            <form class="navbar-form navbar-right" role="search" style="width:93%">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Поиск" type="text">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </form>
-                            {% block add_button %}
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="nav-divider"></li>
-                                    <li><a href="{% block add_href %}{% endblock %}" class="btn btn-success">Добавить своё</a></li>
-                                </ul>
-                            {% endblock %}
-                        </div>
-                    </nav>
-                    {% block main_content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ohthathr{% endblock %}</title>
+    {% block style %}
+        <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "vendor/bootstrap3-wysihtml5-bower/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {% include "navigation.html" %}
+        <div class="col-md-10 hr-container">
+            <nav class="navbar navbar-default navbar-static-top hr-navbar" role="navigation">
+                <div class="collapse navbar-collapse">
+
+                    {% block add_button %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="{% block add_href %}{% endblock %}" class="hr-add-button">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
                     {% endblock %}
+                    <form class="navbar-form navbar-right" role="search" style="width:93%">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Поиск" type="text">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
+            </nav>
+
+            {% block main_content %}
+            {% endblock %}
         </div>
-        <footer class="footer">
-        </footer>
-    </body>
+    </div>
+</div>
+<footer class="footer">
+</footer>
+</body>
 {% block js %}
     <script type="text/javascript" src="{% static "vendor/jquery/jquery.min.js" %}"></script>
     <script type="text/javascript" src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/bootstrap3-wysihtml5-bower/bootstrap-wysiwyg.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/bootstrap3-wysihtml5-bower/bootstrap3-wysihtml5.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/bootstrap3-wysihtml5-bower/locales/bootstrap-wysihtml5.ru-RU.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/lorem/lorem.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/holder/holder.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
 {% endblock %}
 </html>

@@ -1,11 +1,9 @@
 {% url url_name as link %}
 <li {% if request.path == link %} class="active"{% endif %}>
     <a href="{{ link }}">
-    <img data-src="holder.js/40x40/lava" alt="40x40" style="width: 40px; height: 40px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACaklEQVRYR+2XS2gTURSG/7wzSWmatI2JaWpaMU0RXLtSxIW4s+im4gOqLrqoXbjJRimCuHHjA6m41p3igzYg4kpxI12IWk1TjUlsIk3TwbRNZtrMeGZaoWJsHncjeC/MYuCcM99859w7jKE8uF3FP7wMHJCxO9wgo0Bwg9wgqwHWfD6D3CCrAdZ8PoP/t0FJMSAjW+AxV+CmS1vFihHxkh1OUwURQapLEEudLWdwPNeBa1kfooEsznoXsLBqwrF4L9KyTQe74M9h2JevCclS56+As2UrDk2H9YePdc3hRGcBjwsu3Mx1IhZJ4O2KA0OJHXixO46Y6MKbJQfGgnN4vyLgVs6Lq93fELLLaKROu2W9S5tXVUBFVTFIps5ty+M2AQ14RJz0FnA57aeWmzHem0JasuLgdB8ehhPooPbv+9CHwy4R70oC9rYs4woBaquROnuc5foAJxZbdVvXQxkMfNqJ42TvFF3RrwEU1owbgDYCDOuAWuEY5Ywku+GzyHhChj1mBc3UqWlQJXujySAmxbbfYh8QyOtiC6aWBdwhgylpHTAWiWOXIOPVDydOz/YgaJXwlACdRqWpOjUBtYCPJRvKtFsl1YDzX4LY7yriYlcOUzRnZz6HdGsvCfZ+3oPn/TMoU5xm+tfmGfF9x6h/vuE6dtOfP5hb7uJVBThCDx6iHXy0XcQa3UdTATxadOsvercniQNtS7iR9eLevBsT/Qk8E1txKRPAZGQG4Y1jqN461Y6Dpj51Ih03Vmqho8ob1zxzNgXUU6cpwEYgWGM5IDfIaoA1n88gN8hqgDWfzyA3yGqANZ/PIKvBn6vVp8g9xQZgAAAAAElFTkSuQmCC">
-        {{ name }}
-        {% if notify_count %}
-            <a href=""><span class="label label-warning">+{{ notify_count }}</span></a>
-{#            TODO: new link #}
+        <img data-src="holder.js/40x40/lava" alt="40x40">{{ name }}{% if notify_count %}
+            {# TODO: new link #}
+            <span class="label label-warning">+{{ notify_count }}</span>
         {% endif %}
     </a>
 </li>

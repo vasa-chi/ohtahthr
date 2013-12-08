@@ -21,7 +21,8 @@ class Comment(models.Model):
                   user: Ссылка на пользователя, создавшего комментарий.
                   rating: Рейтинг комментария.
     """
-    refer_to = models.ForeignKey("self", verbose_name=u"родительский комментарий", null=True, blank=True)
+    refer_to = models.ForeignKey("self", verbose_name=u"родительский комментарий", null=True, blank=True,
+                                 related_name="childs")
     text = models.TextField(max_length=2000, verbose_name=u"комментарий")
     object = GenericForeignKey("content_type", "object_id")
     object_id = models.PositiveIntegerField(verbose_name=u"id объекта комментария", null=True, blank=True)

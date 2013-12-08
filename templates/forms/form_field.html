@@ -1,0 +1,8 @@
+<div class="form-group{% if field.errors %} has-error{% endif %}">
+    <label for="url" class="control-label">{{ field.label }}</label>
+    <span class="help-block">{{ field.help_text }}</span>
+    {% include "forms/errors.html" with errors=field.errors %}
+    {% block widget %}
+        {{ field }}
+    {% endblock %}
+</div>

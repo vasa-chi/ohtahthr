@@ -1,6 +1,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "variables";
+@import "mixins";
 
 html, body {
   height : 100%;
@@ -25,8 +26,7 @@ body {
 }
 
 .hr-container {
-  background-color : darken($white, 5%);
-  padding-left     : 0;
+  @include container_general;
 }
 
 .hr-settings {
@@ -41,12 +41,7 @@ body {
   margin-bottom : 1.5em;
 
   .hr-item {
-    @include box-shadow(transparentize($black, 0.8) 0px 0px 2px 1px);
-
-    padding-left     : 0;
-    padding-right    : 0;
-
-    background-color : $white;
+    @include item_general;
 
     .hr-head {
       width         : 100%;
@@ -96,6 +91,12 @@ body {
       padding-right : $hr-padding-right;
     }
 
+    .hr-tags {
+      .label + .label {
+        margin-left : 0.5em;
+      }
+    }
+
     .hr-info {
       border-top : 1px solid $divider_color;
       padding    : 1em 1em;
@@ -141,7 +142,16 @@ body {
       }
     }
   }
+}
 
+.hr-add-post-container {
+  @include container_general;
+}
+
+.hr-add-post {
+  @include item_general;
+
+  padding : $hr-default-padding;
 }
 
 .nav.nav-pills.nav-stacked li > a {

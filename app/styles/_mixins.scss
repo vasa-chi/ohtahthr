@@ -1,0 +1,16 @@
+@import "compass/css3/box-shadow";
+@import "variables";
+
+@mixin container_general {
+  background-color : darken($white, 5%);
+  padding-left     : 0;
+}
+
+@mixin item_general {
+  @include box-shadow(transparentize($black, 0.8) 0px 0px 2px 1px);
+
+  padding-left     : 0;
+  padding-right    : 0;
+
+  background-color : $white;
+}

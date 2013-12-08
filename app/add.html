@@ -17,9 +17,66 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <textarea id="some-textarea" placeholder="Enter text ..." style="width: 100%" rows="20"></textarea>
+    <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix">
+        <li class="active"><a href="/"><img data-src="holder.js/40x40/lava" alt=""/>Wat-парад <span
+            class="label label-danger">+6</span></a></li>
+        <li><a href="#"><img data-src="holder.js/40x40/lava" alt=""/>Хочу туда <span
+            class="label label-danger">+3</span></a></li>
+        <li><a href="#"><img data-src="holder.js/40x40/lava" alt=""/>На горе Фудзи <span
+            class="label label-danger">+1</span></a></li>
+        <li><a href="#"><img data-src="holder.js/40x40/lava" alt=""/>Что нового <span
+            class="label label-danger">10</span></a></li>
+        <li><a href="settings.html"><img data-src="holder.js/40x40/lava" alt=""/>Настройки</a></li>
+      </ul>
     </div>
+    <div class="col-md-10 hr-container">
+      <nav class="navbar navbar-default navbar-static-top hr-navbar" role="navigation">
+        <div class="collapse navbar-collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="add.html" class="hr-add-button">
+                <i class="glyphicon glyphicon-plus"></i>
+              </a>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search" style="width:93%">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="Поиск" type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="hr-add-post">
+            <form action="">
+              <div class="form-group">
+                <input type="text" name="title" id="title" class="form-control" placeholder="Заголовок"/>
+              </div>
+              <div class="form-group">
+                <input type="text" name="url" id="url" class="form-control" placeholder="http://example.com"/>
+              </div>
+              <div class="form-group">
+                <textarea id="some-textarea" placeholder="Enter text ..." style="width: 100%" rows="20"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="text" name="tags" id="tags" class="form-control" placeholder="тэг, тэг"/>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

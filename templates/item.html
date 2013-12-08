@@ -1,0 +1,40 @@
+<div class="col-md-12 hr-item">
+    <div class="hr-head">
+        <div class="row">
+            <div class="hr-head-name-wrapper">
+                <div class="hr-head-name">
+                    <a href="{% url url_name item.pk %}"><h1 class="lorem_s lorem-marker">{{ item.title }}</h1></a>
+                </div>
+            </div>
+            <div class="hr-head-info-wrapper">
+                <div class="hr-head-info">
+                    <a href="#" class="hr-username">{{ item.user }}</a>
+                    <a href="#" class="hr-postdate">{{ item.date|timesince }}</a>
+{#                    TODO: normalize data as vasa said #}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hr-body lorem_p6 lorem-marker">{{ item.description|truncatewords:50 }}</div>
+    {% include "tags/tags.html" with tags=item.tagged_items.all %}
+    <div class="hr-info clearfix">
+        <div class="pull-left">
+            <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>
+            <a href=""><i class="glyphicon glyphicon-chevron-up" style="margin-left: 3em"></i></a>
+            {{ item.rating }}
+            <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-xs btn-primary">twittah</button>
+            <button class="btn btn-xs btn-primary">vikey</button>
+            <button class="btn btn-xs btn-primary">facebooka</button>
+        </div>
+    </div>
+    <div class="hr-footer">
+        {% include "comments/add_comment.html" %}
+        {% if item.comments.all %}
+            {% include "comments/comments_list.html" with comments=item.comments.all %}
+        {% endif %}
+{#      TODO: buttons here #}
+    </div>
+</div>

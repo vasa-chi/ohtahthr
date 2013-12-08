@@ -3,22 +3,46 @@
 <html lang="ru">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title></title>
+        <title>{% block title %}ohthathr{% endblock %}</title>
         {% block style %}
             <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
         {% endblock %}
-
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-
+                {% include "navigation.html" %}
+                <div class="col-md-10 col-md-offset-2 hr-container">
+                    <nav class="navbar navbar-default navbar-static-top hr-navbar" role="navigation">
+                        <div class="collapse navbar-collapse">
+                            <form class="navbar-form navbar-right" role="search" style="width:93%">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Поиск" type="text">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                            {% block add_button %}
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="nav-divider"></li>
+                                    <li><a href="{% block add_href %}{% endblock %}" class="btn btn-success">Добавить своё</a></li>
+                                </ul>
+                            {% endblock %}
+                        </div>
+                    </nav>
+                    {% block main_content %}
+                    {% endblock %}
                 </div>
             </div>
         </div>
+        <footer class="footer">
+        </footer>
     </body>
 {% block js %}
+    <script type="text/javascript" src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
 {% endblock %}
 </html>

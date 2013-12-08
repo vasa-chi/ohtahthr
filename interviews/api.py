@@ -13,7 +13,7 @@ def create_interview(data):
     """
     i = Interview.objects.create(title=data["title"],
                                  url=data["url"],
-                                 added_by=data["user"],
+                                 added_by=data["added_by"],
                                  description=data["description"],
                                  was_success=data["was_success"],
                                  company=get_company(data["company"]))

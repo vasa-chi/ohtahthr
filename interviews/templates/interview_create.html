@@ -1,0 +1,14 @@
+{% extends "interviews.html" %}
+{% load staticfiles %}
+{% block main_content %}
+    {% include "interview_form.html" %}
+{% endblock %}
+{% block style %}
+    {{ block.super }}
+    <link href="{% static "vendor/select2/css/select2.css" %}" rel="stylesheet"/>
+    <link href="{% static "vendor/select2/css/select2-bootstrap.css" %}" rel="stylesheet"/>
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static "vendor/select2/js/select2.min.js" %}"></script>
+{% endblock %}

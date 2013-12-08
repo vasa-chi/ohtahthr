@@ -10,11 +10,23 @@ body {
   background-color : darken($white, 5%);
   font-family      : "Helvetica Neue", Helvetica, Arial, sans-serif;
   color            : $black;
-  padding-top      : 70px;
+}
+
+.navbar-nav > li > a.hr-add-button {
+  padding-top    : 5px;
+  padding-bottom : 9px;
+  font-size      : 36px;
+  text-align     : center;
+  vertical-align : middle;
+}
+
+.hr-navbar {
+  margin-bottom : 0;
 }
 
 .hr-container {
   background-color : darken($white, 5%);
+  padding-left     : 0;
 }
 
 .hr-settings {
@@ -135,6 +147,6 @@ body {
 .nav.nav-pills.nav-stacked li > a {
   @include border-radius(0px);
 
-  padding-top    : 0;
-  padding-bottom : 0;
+  padding-top    : 5px;
+  padding-bottom : 6px;
 }

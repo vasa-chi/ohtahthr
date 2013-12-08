@@ -5,7 +5,8 @@
     "jquery": "~1.10.2",
     "bootstrap": "~3.0.3",
     "lorem": "*",
-    "semantic": "~0.10.0"
+    "semantic": "~0.10.0",
+    "bootstrap3-wysihtml5-bower": "~0.2.2"
   },
   "devDependencies": {}
 }

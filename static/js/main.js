@@ -1,7 +1,6 @@
 (function($) {
-  $('.container').ipsum();
-
-  $('#some-textarea').wysihtml5({
-    locale:'ru-RU'
+  $("textarea").wysihtml5({
+    locale:"ru-RU"
   });
+  $("select").select2();
 }(jQuery));

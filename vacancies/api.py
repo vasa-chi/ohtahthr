@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from models import Vacancy
-from ohthathr.api import get_tags, get_company
+from ohthathr.api import get_tags
 from django.http import Http404
 
 
@@ -17,7 +17,6 @@ def create_vacancy(data):
                                added_by=data["user"],
                                description=data["description"],
                                why=data["why"],
-                               company=get_company(data["company"])
                                )
     v.tags = get_tags(data["tags"])
     return v
@@ -43,8 +42,6 @@ def update_vacancy(vacancy_pk, user, changed_data):
             vacancy.tags = get_tags(changed_data.pop("tags"))
         if "url" in changed_data:
             pass  # TODO: generate another content?
-        if "company" in changed_data:
-            changed_data["company"] = get_company(changed_data["company"])
         vacancy.update(**changed_data)
         #TODO: notify
 

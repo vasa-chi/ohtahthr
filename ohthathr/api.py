@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db.models import F
 from taggit.models import Tag
-from models import Company
 
 #TODO: last_edit date will be updated on UPDATE call?
 
@@ -19,13 +18,9 @@ def dec_ration(pk, model):
 def get_tags(tag_names):
     tags = []
     for tag_name in tag_names:
-        tags.append(Tag.objects.get_or_create(name__iexact=tag_name))
+        qs = Tag.objects.filter(name__exact=tag_name)
+        if qs.exists():
+            tags.append(qs[0])
+        else:
+            tags.append(Tag.objects.create(name=tag_name))
     return tags
-
-
-def get_company(company_name):
-    qs = Company.objects.filter(title__iexact=company_name)
-    if qs.exists():
-        return qs[0]
-    else:
-        return Company.objects.create(title=company_name)

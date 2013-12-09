@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.core.urlresolvers import reverse
 from ohthathr.models import Base
 
 
@@ -28,3 +29,6 @@ class Interview(Base):
 
     class Meta:
         verbose_name = u"собеседование"
+
+    def get_absolute_url(self):
+        return reverse("interview_detail", kwargs={"pk": self.pk})

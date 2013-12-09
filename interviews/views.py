@@ -24,7 +24,6 @@ class InterviewCreateView(BaseCreateView):
     def prepare_api_data(self, form_cleaned_data):
         from django.contrib.auth.models import User  # placeholder
         form_cleaned_data["added_by"] = User.objects.get(pk=1)  # self.request.user
-        form_cleaned_data["tags"] = ["placeholder", "second"]
         return super(InterviewCreateView, self).prepare_api_data(form_cleaned_data)
 
     def _get_api_function(self):

@@ -66,7 +66,7 @@ class BaseCreateView(BaseCRUDMixin, CreateView):
         form = self.get_form(form_class)
         if form.is_valid():
             api_data = self.prepare_api_data(form.cleaned_data)
-            self.object = self.api_function()(api_data)
+            self.object = self.api_function(api_data)
             return HttpResponseRedirect(self.get_success_url())
         else:
             return self.form_invalid(form)

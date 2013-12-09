@@ -16,7 +16,8 @@ def create_interview(data):
                                  added_by=data["added_by"],
                                  description=data["description"],
                                  was_success=data["was_success"])
-    i.tags = get_tags(data["tags"])
+    for tag in get_tags(data["tags"]):
+        i.tags.add(tag)
     return i
 
 
@@ -27,7 +28,8 @@ def update_interview(interview, changed_data):
             changed_data - словарь с измененными данными.
     """
     if "tags" in changed_data:
-        interview.tags = get_tags(changed_data.pop("tags"))
+        for tag in get_tags(get_tags(changed_data.pop("tags"))):
+            interview.tags.add(tag)
     changed_data["last_edit"] = datetime.now()
     Interview.objects.filter(pk=interview.pk).update(**changed_data)
     #TODO: notify

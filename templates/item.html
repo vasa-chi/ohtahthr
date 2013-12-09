@@ -34,11 +34,11 @@
             {% else %}
                 <div class="hr-body">{{ item.description|truncatewords:50|safe }}</div>
                 {% if item.last_edit %}
-                    <small class="text-muted">Последнее редактирование {{ item.last_edit|timesince }} назад</small>
+                    <small class="text-muted">Обновлено {{ item.last_edit|timesince }} назад</small>
                 {% endif %}
             {% endif %}
 
-            {% include "tags/tags.html" with tags=item.tagged_items.all %}
+            {% include "tags/tags.html" with tags=item.tags.all %}
             <div class="hr-info clearfix">
                 <div class="pull-left">
                     <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>

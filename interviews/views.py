@@ -1,58 +1,50 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
+from ohthathr.views import BaseListView, BaseDetailView, BaseCreateView, BaseUpdateView, BaseDeleteView
 from models import Interview
 from forms import InterviewForm
 from api import create_interview, delete_interview, update_interview
 
 
-class InterviewListView(ListView):
-    queryset = (Interview.objects.filter(deleted=False)
-                         .select_related("added_by")
-                         .prefetch_related('tagged_items__tag'))
+class InterviewListView(BaseListView):
     template_name = "interview_list.html"
-
-    def get_queryset(self):
-        qs = super(InterviewListView, self).get_queryset()#.filter(added_by=self.request.user)
-        return qs
-
-    #def get(self, request, *args, **kwargs):
-    #    TODO: ordering, filter by settings
-    #    pass
+    model = Interview
 
 
-class InterviewDetailView(DetailView):
-    queryset = (Interview.objects.filter(deleted=False)
-                         .select_related("added_by", "comments", "comments__user")
-                         .prefetch_related('tagged_items__tag'))
+class InterviewDetailView(BaseDetailView):
+    model = Interview
     template_name = "interview_detail.html"
 
-    def get_queryset(self):
-        qs = super(InterviewDetailView, self).get_queryset()#.filter(added_by=self.request.user)
-        return qs
 
-
-class InterviewCreateView(CreateView):
+class InterviewCreateView(BaseCreateView):
     template_name = "interview_create.html"
-    queryset = (Interview.objects.filter(deleted=False)
-                         .prefetch_related('tagged_items__tag'))
     form_class = InterviewForm
+    success_url = "interview_detail"
+    model = Interview
 
-    def get_success_url(self):
-        return reverse("fuji_detail", kwargs={"pk": self.object.pk})
+    def prepare_api_data(self, form_cleaned_data):
+        from django.contrib.auth.models import User  # placeholder
+        form_cleaned_data["added_by"] = User.objects.get(pk=1)  # self.request.user
+        form_cleaned_data["tags"] = ["placeholder", "second"]
+        return super(InterviewCreateView, self).prepare_api_data(form_cleaned_data)
 
-    def get_queryset(self):
-        return super(InterviewCreateView, self).get_queryset()#.filter(added_by=self.request.user)
+    def _get_api_function(self):
+        return create_interview
 
-    def post(self, request, *args, **kwargs):
-        from django.contrib.auth.models import User
-        self.object = None
-        form_class = self.get_form_class()
-        form = self.get_form(form_class)
-        if form.is_valid():
-            form.cleaned_data["added_by"] = User.objects.get(pk=1)  # self.request.user
-            self.object = create_interview(form.cleaned_data)
-            return HttpResponseRedirect(self.get_success_url())
-        else:
-            return self.form_invalid(form)
+
+class InterviewUpdateView(BaseUpdateView):
+    template_name = "interview_edit.html"
+    form_class = InterviewForm
+    success_url = "interview_detail"
+    model = Interview
+
+    def _get_api_function(self):
+        return update_interview
+
+
+class InterviewDeleteView(BaseDeleteView):
+    template_name = "interview_delete.html"
+    success_url = "interview_list"
+    model = Interview
+
+    def _get_api_function(self):
+        return delete_interview

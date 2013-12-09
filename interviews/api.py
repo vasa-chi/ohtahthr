@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from models import Interview
 from ohthathr.api import get_tags
+from datetime import datetime
 
 
 def create_interview(data):
@@ -27,6 +28,7 @@ def update_interview(interview, changed_data):
     """
     if "tags" in changed_data:
         interview.tags = get_tags(changed_data.pop("tags"))
+    changed_data["last_edit"] = datetime.now()
     Interview.objects.filter(pk=interview.pk).update(**changed_data)
     #TODO: notify
 

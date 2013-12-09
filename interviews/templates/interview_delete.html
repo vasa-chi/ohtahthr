@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "interview_detail.html" %}
+{% block main_content %}
+    {% include "forms/base_delete.html" with object_verbose="Вашу историю" cancel_url="interview_list"%}
+{% endblock %}

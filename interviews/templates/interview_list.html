@@ -1,6 +1,4 @@
 {% extends "interviews.html" %}
 {% block main_content %}
-    {% for item in object_list %}
-        {% include "item.html" with item=item url_name="fuji_detail" %}
-    {% endfor %}
+    {% include "base_list.html" with url_detail_name="interview_detail" url_edit_name="interview_edit" url_delete_name="interview_delete"%}
 {% endblock %}

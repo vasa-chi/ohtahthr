@@ -1,0 +1,3 @@
+{% for item in object_list %}
+    {% include "item.html" with item=item url_detail_name=url_detail_name url_edit_name=url_edit_name url_delete_name=url_delete_name %}
+{% endfor %}

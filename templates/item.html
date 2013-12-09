@@ -5,20 +5,39 @@
                 <div class="row">
                     <div class="hr-head-name-wrapper">
                         <div class="hr-head-name">
-                            <a href="{% url url_name item.pk %}"><h1 class="lorem_s lorem-marker">{{ item.title }}</h1>
+                            <a href="{% url url_detail_name item.pk %}"><h1>{{ item.title }}</h1>
                             </a>
                         </div>
                     </div>
                     <div class="hr-head-info-wrapper">
                         <div class="hr-head-info">
-                            <a href="#" class="hr-username">{{ item.user }}</a>
+                            <a href="#" class="hr-username">{{ item.added_by.username }}</a>
                             <a href="#" class="hr-postdate">{{ item.date|timesince }}</a>
-                            {#                    TODO: normalize data as vasa said #}
+{#                            {% if item.added_by == request.user %}#} {#TODO: user check#}
+                                   <div class="btn-group">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-wrench"></span> <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{% url url_edit_name item.pk %}"><span class="glyphicon glyphicon-pencil"></span> Редактировать</a></li>
+                                        <li><a href="{% url url_delete_name item.pk %}"><span class="glyphicon glyphicon-trash"></span> Удалить</a></li>
+                                      </ul>
+                                   </div>
+{#                            {% endif %}#}
+                            {# TODO: normalize date as vasa said #}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hr-body lorem_p6 lorem-marker">{{ item.description|truncatewords:50 }}</div>
+            {% if detail %}
+                <div class="hr-body">{{ item.description|safe }}</div>
+            {% else %}
+                <div class="hr-body">{{ item.description|truncatewords:50|safe }}</div>
+                {% if item.last_edit %}
+                    <small class="text-muted">Последнее редактирование {{ item.last_edit|timesince }} назад</small>
+                {% endif %}
+            {% endif %}
+
             {% include "tags/tags.html" with tags=item.tagged_items.all %}
             <div class="hr-info clearfix">
                 <div class="pull-left">
@@ -26,6 +45,7 @@
                     <a href=""><i class="glyphicon glyphicon-chevron-up" style="margin-left: 3em"></i></a>
                     {{ item.rating }}
                     <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <a class="btn btn-xs btn-warning" id="report_abuse_link">Пожаловаться</a>
                 </div>
                 <div class="pull-right">
                     <button class="btn btn-xs btn-primary">twittah</button>
@@ -34,11 +54,13 @@
                 </div>
             </div>
             <div class="hr-footer">
-                {% include "comments/add_comment.html" %}
-                {% if item.comments.all %}
-                    {% include "comments/comments_list.html" with comments=item.comments.all %}
+                {% if detail %}
+                    {% include "comments/add_comment.html" %}
+                    {% if item.comments.all %}
+                        {% include "comments/comments_list.html" with comments=item.comments.all %}
+                    {% endif %}
+                    {#      TODO: buttons here #}
                 {% endif %}
-                {#      TODO: buttons here #}
             </div>
         </div>
     </div>

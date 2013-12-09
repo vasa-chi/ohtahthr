@@ -1,0 +1,10 @@
+<form method="post" role="form">
+    {% csrf_token %}
+    <div class="alert alert-danger">
+        <p>Вы действительно хотите удалить {{ object_verbose }} "<a href="{{ object.get_absolute_url }}">{{ object }}</a>" ?</p>
+    </div>
+    <div class="pull-right">
+        <a class="btn" href="{% url cancel_url %}">Отмена</a>
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </div>
+</form>

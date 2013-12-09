@@ -5,12 +5,14 @@
     </a>
     <div class="media-body">
       <div class="media-heading">
+        <a href="" class="comment_id"># {{ comment.pk }}</a>
         <a href="#">{{ comment.user }}</a>
           <span>
             <a href=""><i class="glyphicon glyphicon-chevron-up"></i></a>
             {{ comment.rating }}
             <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
             <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>
+            <a class="btn btn-xs btn-warning" id="report_abuse_link">Пожаловаться</a>
           </span>
         <small class="pull-right">{{ comment.date|timesince }}</small>
 {#          TODO: display date as vasa said #}

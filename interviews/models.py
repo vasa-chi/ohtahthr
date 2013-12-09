@@ -32,3 +32,9 @@ class Interview(Base):
 
     def get_absolute_url(self):
         return reverse("interview_detail", kwargs={"pk": self.pk})
+
+    def get_new_heading(self):
+        return u"Новая история собеседования"
+
+    def get_edit_heading(self):
+        return u"{0} - редактирование".format(self.title)

@@ -1,9 +1,15 @@
+<h3>
+    {% if object.pk %}
+        {{ object.get_edit_heading }}
+    {% else %}
+        {{ object.get_new_heading }}
+    {% endif %}
+</h3>
 <form role="form" method="post">
     {% csrf_token %}
     {% include "forms/errors.html" with errors=form.non_field_errors %}
     {% block main_fields %}
         {% include "forms/form_field.html" with field=form.title %}
-        {% include "forms/form_field.html" with field=form.company %}
         {% include "forms/form_field.html" with field=form.url %}
         {% include "forms/form_field.html" with field=form.description %}
     {% endblock %}

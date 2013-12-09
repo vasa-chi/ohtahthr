@@ -1,4 +1,5 @@
 {% extends "interviews.html" %}
+{% block title %} {{ object }} | {{ block.super }}{% endblock %}
 {% block main_content %}
-    {% include "item.html" with item=object url_name="fuji_detail" %}
+    {% include "item.html" with item=object url_detail_name="interview_detail" url_edit_name="interview_edit" url_delete_name="interview_delete" detail=1 %}
 {% endblock %}

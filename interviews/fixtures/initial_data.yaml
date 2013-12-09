@@ -1,0 +1,39 @@
+- model: interviews.interview
+  pk: 1
+  fields:
+    title: Lorem ipsum
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate semper. Praesent hendrerit congue diam, eget luctus velit euismod vel. Quisque adipiscing arcu et elit accumsan, a eleifend magna vulputate. Aenean tristique feugiat mauris non tristique. Aliquam convallis condimentum tortor, a interdum erat pellentesque eu. Praesent euismod congue risus eget mollis.
+    was_success: 0
+    added_by: 1
+    date: 2013-12-21
+    last_edit: 2013-12-21
+
+- model: interviews.interview
+  pk: 2
+  fields:
+    title: Lorem ipsum2
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate semper. Praesent hendrerit congue diam, eget luctus velit euismod vel. Quisque adipiscing arcu et elit accumsan, a eleifend magna vulputate. Aenean tristique feugiat mauris non tristique. Aliquam convallis condimentum tortor, a interdum erat pellentesque eu. Praesent euismod congue risus eget mollis.
+    was_success: 0
+    added_by: 1
+    date: 2013-12-21
+    last_edit: 2013-12-21
+
+- model: interviews.interview
+  pk: 3
+  fields:
+    title: Lorem ipsum 3
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate semper. Praesent hendrerit congue diam, eget luctus velit euismod vel. Quisque adipiscing arcu et elit accumsan, a eleifend magna vulputate. Aenean tristique feugiat mauris non tristique. Aliquam convallis condimentum tortor, a interdum erat pellentesque eu. Praesent euismod congue risus eget mollis.
+    was_success: 0
+    added_by: 1
+    date: 2013-12-21
+    last_edit: 2013-12-21
+
+- model: interviews.interview
+  pk: 4
+  fields:
+    title: Lorem ipsum 4
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate semper. Praesent hendrerit congue diam, eget luctus velit euismod vel. Quisque adipiscing arcu et elit accumsan, a eleifend magna vulputate. Aenean tristique feugiat mauris non tristique. Aliquam convallis condimentum tortor, a interdum erat pellentesque eu. Praesent euismod congue risus eget mollis.
+    was_success: 0
+    added_by: 1
+    date: 2013-12-21
+    last_edit: 2013-12-21

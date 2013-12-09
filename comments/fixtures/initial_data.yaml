@@ -1,0 +1,44 @@
+- model: comments.comment
+  pk: 1
+  fields:
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate
+    object_id: 1
+    content_type: 10
+    date: 2013-12-21 04:00:00+04
+    date_edited: 2013-12-21 04:00:00+04
+    deleted: False
+    user: 1
+    rating: 0
+- model: comments.comment
+  pk: 2
+  fields:
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate
+    object_id: 1
+    content_type: 10
+    date: 2013-12-21 04:00:00+04
+    date_edited: 2013-12-21 04:00:00+04
+    deleted: False
+    user: 1
+    rating: 0
+- model: comments.comment
+  pk: 3
+  fields:
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate
+    object_id: 1
+    content_type: 10
+    date: 2013-12-21 04:00:00+04
+    date_edited: 2013-12-21 04:00:00+04
+    deleted: False
+    user: 1
+    rating: 0
+- model: comments.comment
+  pk: 4
+  fields:
+    text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum non est consequat tincidunt. Nam sed arcu ut nisl vulputate
+    object_id: 1
+    content_type: 10
+    date: 2013-12-21 04:00:00+04
+    date_edited: 2013-12-21 04:00:00+04
+    deleted: False
+    user: 1
+    rating: 0

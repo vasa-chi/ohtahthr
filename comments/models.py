@@ -28,7 +28,7 @@ class Comment(models.Model):
     object_id = models.PositiveIntegerField(verbose_name=u"id объекта комментария", null=True, blank=True)
     content_type = models.ForeignKey(ContentType, null=True)
     date = models.DateTimeField(auto_now_add=True, verbose_name=u"дата создания")
-    date_edited = models.DateTimeField(auto_now=True, auto_now_add=True)
+    date_edited = models.DateTimeField(auto_now=True, default=None, null=True, blank=True)
     deleted = models.BooleanField(verbose_name=u"удален", default=False)
     user = models.ForeignKey(User, verbose_name=u"пользователь", null=True, blank=True)
     rating = models.IntegerField(verbose_name=u"рейтинг", default=0)

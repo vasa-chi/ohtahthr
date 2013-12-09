@@ -1,0 +1,5 @@
+{% extends "forms/base_form.html" %}
+{% block description_name %}Описание вакансии{% endblock %}
+{% block other_fields %}
+    {% include "forms/form_field.html" with field=form.why %}
+{% endblock %}

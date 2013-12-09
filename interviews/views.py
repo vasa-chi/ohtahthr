@@ -22,7 +22,7 @@ class InterviewCreateView(BaseCreateView):
     model = Interview
 
     def prepare_api_data(self, form_cleaned_data):
-        from django.contrib.auth.models import User  # placeholder
+        from django.contrib.auth.models import User  # TODO: remove placeholder
         form_cleaned_data["added_by"] = User.objects.get(pk=1)  # self.request.user
         return super(InterviewCreateView, self).prepare_api_data(form_cleaned_data)
 

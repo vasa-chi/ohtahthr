@@ -14,52 +14,34 @@ def create_vacancy(data):
     v = Vacancy.objects.create(type=data["type"],
                                title=data["title"],
                                url=data["url"],
-                               added_by=data["user"],
+                               added_by=data["added_by"],
                                description=data["description"],
-                               why=data["why"],
+                               why=data["why"]
                                )
-    v.tags = get_tags(data["tags"])
+    #v.tags.add(get_tags(data["tags"]))
     return v
 
 
-def update_vacancy(vacancy_pk, user, changed_data):
+def update_vacancy(vacancy, changed_data):
     """Обновляет инстанс vacancies.models.Vacancy.
        Args:
-            vacancy_pk - pk для запроса. Число.
-            user - инстанс модели пользователя. Для фильтра.
+            vacancy - инстанс вакансии. vacancies.models.Vacancy.
             changed_data - словарь с измененными данными.
-       Raises:
-              Http404 - если вакансия не найдена.
     """
-    try:
-        vacancy = (Vacancy.objects
-                   .select_for_update()
-                   .get(pk=vacancy_pk, added_by=user))
-    except Vacancy.DoesNotExist:
-        raise Http404()
-    else:
-        if "tags" in changed_data:
-            vacancy.tags = get_tags(changed_data.pop("tags"))
-        if "url" in changed_data:
-            pass  # TODO: generate another content?
-        vacancy.update(**changed_data)
-        #TODO: notify
+    if "tags" in changed_data:
+        vacancy.tags.all.delete()
+        vacancy.tags = get_tags(changed_data.pop("tags"))
+    if "url" in changed_data:
+        pass  # TODO: generate another content?
+    Vacancy.objects.select_for_update().filter(pk=vacancy.pk).update(**changed_data)
+    #TODO: notify
 
 
-def delete_vacancy(vacancy_pk, user):
+def delete_vacancy(vacancy):
     """Удаление интервью.
        Args:
-            vacancy_pk - pk для запроса. Число.
-            user - инстанс модели пользователя. Для фильтра.
-       Raises:
-            Http404 - если вакансия не найдена.
+            vacancy - инстанс вакансии. vacancies.models.Vacancy.
     """
-    try:
-        (Vacancy
-         .objects.select_for_update()
-         .filter(pk=vacancy_pk, added_by=user)
-         .update(deleted=True))
-        #TODO:  schedule to delete
-    except Vacancy.DoesNotExist:
-        raise Http404()
+    Vacancy.objects.select_for_update().filter(pk=vacancy.pk).update(deleted=True)
+    # TODO: schedule to delete
     # TODO: clear notify

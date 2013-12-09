@@ -40,7 +40,7 @@ class BaseCRUDMixin(object):
     def get_object(self, queryset=None):
         qs = self.get_queryset()
         try:
-            return qs.select_for_update().get(pk=self.kwargs["pk"])  # , added_by=self.request.user)
+            return qs.get(pk=self.kwargs["pk"])  # , added_by=self.request.user)
         except self.model.DoesNotExist:
             raise Http404()
 

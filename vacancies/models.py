@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from ohthathr.models import Base
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Vacancy(Base):
@@ -22,15 +23,24 @@ class Vacancy(Base):
         last_edit (derived): Дата последнего редактирования. DateTime.
         description (derived): Описание вакансии и прочее. Строка.
         company (derived): Название компании, чью вакансия.
-        why: В зависимости от типа вакансии может предоставлять :
+        why: В зависимости от типа вакансии может предоставлять:
              1 - Почему эта вакансия попала в wat-парад
              2 - null
              3 - Почему эта вакансия интересна
 
     """
-    VACANCY_TYPE_CHOICES = ((1, u"Вакансия из парада"),
+    VACANCY_TYPE_CHOICES = ((1, u"Вакансия из wat-парада"),
                             (2, u"Вакансия из историй"),
                             (3, u"Вакансия мечты")
                             )
     type = models.PositiveSmallIntegerField(verbose_name=u"тип вакансии", choices=VACANCY_TYPE_CHOICES)
     why = models.TextField(verbose_name=u"Почему добавлена", null=True, blank=True)
+
+    def get_new_heading(self):
+        pass
+
+    def get_edit_heading(self):
+        return u"{0} - редактирование".format(self.title)
+
+    def get_absolute_url(self):
+        return reverse("vacancy_detail", kwargs={"pk": self.pk})

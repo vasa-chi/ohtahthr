@@ -1,0 +1,4 @@
+{% extends "vacancy/vacancy.html" %}
+{% block main_content %}
+    {% include "item.html" with item=object url_detail_name="vacancy_detail" url_edit_name="vacancy_edit" url_delete_name="vacancy_delete" detail=1 %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    {% if object.type == 1 %}
+        {{ object }} | wat-парад | {{ block.super }}
+    {% elif object.type == 3 %}
+        {{ object }} | хочу туда | {{ block.super }}
+    {% endif %}
+{% endblock %}
+{% block add_href %}
+    {% if object.type == 1 %}
+        {% url "wat_parade_create" %}
+    {% elif object.type == 2 %}
+        {% url "dream_parade_create" %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "wat_vacancies.html" %}
+{% block main_content %}
+    {% if vacancy_type == 1 %}
+        {% include "vacancy/vacancy_form.html" with new_heading="Добавление странной вакансии" %}
+    {% elif vacancy_type == 3 %}
+        {% include "vacancy/vacancy_form.html" with new_heading="Добавление интересной вакансии" %}
+    {% endif %}
+{% endblock %}

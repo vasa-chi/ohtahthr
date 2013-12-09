@@ -16,8 +16,7 @@ def create_interview(data):
                                  added_by=data["added_by"],
                                  description=data["description"],
                                  was_success=data["was_success"])
-    for tag in get_tags(data["tags"]):
-        i.tags.add(tag)
+    i.tags.add(get_tags(data["tags"]))
     return i
 
 
@@ -29,10 +28,9 @@ def update_interview(interview, changed_data):
     """
     if "tags" in changed_data:
         interview.tags.all().delete()
-        for tag in get_tags(get_tags(changed_data.pop("tags"))):
-            interview.tags.add(tag)
+        interview.tags.add(get_tags(changed_data.pop("tags")))
     changed_data["last_edit"] = datetime.now()
-    Interview.objects.filter(pk=interview.pk).update(**changed_data)
+    Interview.objects.select_for_update().filter(pk=interview.pk).update(**changed_data)
     # TODO: notify
 
 
@@ -41,6 +39,6 @@ def delete_interview(interview):
        Args:
             interview - инстанс interview.models.Interview.
     """
-    Interview.objects.filter(pk=interview.pk).update(deleted=True)
+    Interview.objects.select_for_update().filter(pk=interview.pk).update(deleted=True)
     # TODO:  schedule to delete
     # TODO: clear notify

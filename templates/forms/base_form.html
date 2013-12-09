@@ -2,7 +2,7 @@
     {% if object.pk %}
         {{ object.get_edit_heading }}
     {% else %}
-        {{ object.get_new_heading }}
+        {{ new_heading }}
     {% endif %}
 </h3>
 <form role="form" method="post">

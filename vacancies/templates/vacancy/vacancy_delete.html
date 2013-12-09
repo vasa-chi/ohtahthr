@@ -1,8 +1,8 @@
 {% extends "vacancy/vacancy_detail.html" %}
 {% block main_content %}
-    {% if vacancy_type == 1 %}
+    {% if object.type == 1 %}
         {% include "forms/base_delete.html" with object_verbose="Вашу запись о вакансии" cancel_url="wat_parade" %}
-    {% elif vacancy_type == 3 %}
+    {% elif object.type == 3 %}
         {% include "forms/base_delete.html" with object_verbose="Вашу запись о вакансии" cancel_url="dream_parade" %}
     {% endif %}
 {% endblock %}

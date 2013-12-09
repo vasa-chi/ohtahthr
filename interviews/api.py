@@ -28,11 +28,12 @@ def update_interview(interview, changed_data):
             changed_data - словарь с измененными данными.
     """
     if "tags" in changed_data:
+        interview.tags.all().delete()
         for tag in get_tags(get_tags(changed_data.pop("tags"))):
             interview.tags.add(tag)
     changed_data["last_edit"] = datetime.now()
     Interview.objects.filter(pk=interview.pk).update(**changed_data)
-    #TODO: notify
+    # TODO: notify
 
 
 def delete_interview(interview):

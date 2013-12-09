@@ -8,14 +8,15 @@ from taggit.managers import TaggableManager
 
 class Base(models.Model):
     """Базовая модель для все моделей в системе."""
-    title = models.CharField(u"название", max_length=255)
-    url = models.URLField(u"ссылка", null=True, blank=True)
+    title = models.CharField(u"название", max_length=255, help_text=u"Интересный заголовок.")
+    url = models.URLField(u"ссылка", unique=True)
     rating = models.IntegerField(verbose_name=u"рейтинг", default=0)
     added_by = models.ForeignKey(User, verbose_name=u"добавил")
     date = models.DateTimeField(auto_now_add=True, verbose_name=u"дата добавления")
     last_edit = models.DateTimeField(auto_now=True, verbose_name=u"дата последнего изменения", null=True, default=None)
     description = models.TextField(verbose_name=u"Описание")
-    tags = TaggableManager(verbose_name=u"теги", blank=True)
+    tags = TaggableManager(verbose_name=u"теги",
+                           help_text=u"Несколько тегов, минимум 1. Название компании, должности, технологии.")
     deleted = models.BooleanField(verbose_name=u"удалено?", default=False)
     comments = GenericRelation(Comment)
 

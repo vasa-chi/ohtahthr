@@ -36,3 +36,6 @@ class Comment(models.Model):
     class Meta:
         verbose_name = u"комментарий"
         ordering = ["-date"]
+
+    def get_item_type(self):
+        return 2

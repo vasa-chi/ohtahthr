@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from interviews.urls import urls as interviews_urls
 from vacancies.urls import urls as vacancies_urls
+from comments.urls import urls as comments_urls
 admin.autodiscover()
 
 urlpatterns = patterns("",
@@ -16,3 +17,4 @@ urlpatterns = patterns("",
 )
 urlpatterns += interviews_urls
 urlpatterns += vacancies_urls
+urlpatterns += comments_urls

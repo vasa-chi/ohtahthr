@@ -11,12 +11,12 @@ def rating_manipulation(data):
        Args:
             data: объекта для инкримента рейтинга. Словарь.
                   object_pk: pk объекта, для кот. инк/дек. рейтинг;
-                  article_type: См. TYPE_MATCH_MAP;
+                  item_type: См. TYPE_MATCH_MAP;
                   type: тип действия. 0 - декремент, 1 - инкремент;
                   user: Пользователь, совершивший манипуляцию с рейтингом;
 
     """
-    model = TYPE_MATCH_MAP[data["article_type"]]
+    model = TYPE_MATCH_MAP[data["item_type"]]
     ct = ContentType.objects.get_for_model(model)
     rated_by_qs = RatedByUser.objects.filter(object_id=data["object_pk"], content_type=ct, user=data["user"])
     # если пользователь УЖЕ делал инкремент или декремент комменту, т.е. такое же действие.
@@ -35,6 +35,7 @@ def rating_manipulation(data):
                 object.rating -= 1
             elif data["type"] == 1:
                 object.rating += 1
+            object.save(update_fields=["rating"])
         except model.DoesNotExists:
             raise Http404()
         #TODO: notify

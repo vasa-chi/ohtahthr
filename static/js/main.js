@@ -69,7 +69,7 @@
             method : 'POST',
             data   : {
               comment_data : JSON.stringify({
-                article_type : $parent.data('type'),
+                item_type : $parent.data('type'),
                 object_id    : $parent.data('id'),
                 text         : value
               })}
@@ -145,7 +145,7 @@
           method : 'POST',
           data   : {rating_data : JSON.stringify({
             object_pk    : $comment.data('id'),
-            article_type : $comment.data('type'),
+            item_type : $comment.data('type'),
             type         : changeType
           })}
         }).done(function (result) {

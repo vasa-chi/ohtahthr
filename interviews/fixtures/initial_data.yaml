@@ -7,6 +7,7 @@
     added_by: 1
     date: 2013-12-21
     last_edit: 2013-12-21
+    url: hh.ru
 
 - model: interviews.interview
   pk: 2
@@ -17,6 +18,7 @@
     added_by: 1
     date: 2013-12-21
     last_edit: 2013-12-21
+    url: hh2.ru
 
 - model: interviews.interview
   pk: 3
@@ -27,6 +29,7 @@
     added_by: 1
     date: 2013-12-21
     last_edit: 2013-12-21
+    url: hh3.ru
 
 - model: interviews.interview
   pk: 4
@@ -37,3 +40,4 @@
     added_by: 1
     date: 2013-12-21
     last_edit: 2013-12-21
+    url: hh4.ru

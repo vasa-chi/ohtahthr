@@ -285,7 +285,23 @@ body {
   }
 
   line {
-    font-family: \00003105;
+    font-family: \00003104;
+  }
+}
+
+.hr-row .hr-item .hr-timestamp {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003111;
   }
 }
 
@@ -299,7 +315,7 @@ body {
   }
 
   line {
-    font-family: \00003110;
+    font-family: \00003116;
   }
 }
 
@@ -314,7 +330,7 @@ body {
   }
 
   line {
-    font-family: \00003115;
+    font-family: \00003121;
   }
 }
 
@@ -328,11 +344,25 @@ body {
   }
 
   line {
-    font-family: \00003122;
+    font-family: \00003124;
   }
 }
 
-.hr-row .hr-item .hr-footer .comment-list:hover .comment-item:nth-child(odd) {
+.hr-row .hr-item .hr-footer .comment-list {
+  font-size: 90%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003129;
+  }
+}
+
+.hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:nth-child(odd) {
   background-color: #fafafa;
 }
 
@@ -342,29 +372,12 @@ body {
   }
 
   line {
-    font-family: \00003125;
+    font-family: \00003132;
   }
 }
 
-.hr-row .hr-item .hr-footer .comment-list:hover .comment-item:hover {
+.hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:hover {
   background-color: #f2f2f2;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003130;
-  }
-}
-
-.hr-row .hr-item .hr-footer .comment-list .comment-item {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1em;
-  font-size: 90%;
 }
 
 @media -sass-debug-info {
@@ -377,7 +390,65 @@ body {
   }
 }
 
-.hr-row .hr-item .hr-footer .comment-list .comment-item:nth-child(odd) {
+.hr-row .hr-item .hr-footer .comment-list .comment-item {
+  padding-top: 1em;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003140;
+  }
+}
+
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply {
+  color: #808080;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003143;
+  }
+}
+
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover {
+  color: #333333;
+  cursor: pointer;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003150;
+  }
+}
+
+.hr-row .hr-item .hr-footer .comment-list > .comment-item {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
+  }
+
+  line {
+    font-family: \00003154;
+  }
+}
+
+.hr-row .hr-item .hr-footer .comment-list > .comment-item:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
@@ -387,11 +458,11 @@ body {
   }
 
   line {
-    font-family: \00003146;
+    font-family: \00003161;
   }
 }
 
-.hr-row .hr-item .hr-footer .add-comment {
+.hr-row .hr-item .hr-footer > .add-comment {
   padding: 1em;
 }
 
@@ -401,21 +472,7 @@ body {
   }
 
   line {
-    font-family: \00003149;
-  }
-}
-
-.hr-row .hr-item .hr-footer .add-comment .col-xs-10 {
-  padding-left: 0;
-}
-
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003157;
+    font-family: \00003168;
   }
 }
 
@@ -430,7 +487,7 @@ body {
   }
 
   line {
-    font-family: \00003161;
+    font-family: \00003172;
   }
 }
 
@@ -448,7 +505,7 @@ body {
   }
 
   line {
-    font-family: \00003167;
+    font-family: \00003178;
   }
 }
 

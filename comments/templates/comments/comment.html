@@ -1,12 +1,15 @@
-<div class="comment-item">
-  <div class="media">
-    <a class="pull-left" href="#">
-      <img class="media-object img-circle" data-src="holder.js/32x32/vine" alt="32x32" style="width: 32px; height: 32px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABp0lEQVRYR2O0vL3mP8MAAsZRB4yGwGgIjIbAaAgM2hD4+/ELw8cZ2xh+P33LwBfnzMCuLsvwfsomhp/n7zII5vkxcNrooNQgpKqHacZZF3zZdpqBVU6UgUmEj+FN6VwGbi9TBkZ2NgZubxOGF7E9DDwhNgyMjAwMnPZ6DG8blzBw2ukxsGvL4VQvMbeQgYmXE6Paw1sZ/XnzkeFlUj8Dl6shA3+WDwMTMzPD9zO3GD5M3Mgg1JnI8CZjCthAvlgnBt5QOwZ86sVm5jIwc3EQ74B/v/8wMPz9x/Dz0n2GD5M3MYhPy2H4duI6w0cgW6QrhYFdQ4bhy6aTDJ+W7GUQn5XHwMgNNJyAemy1Ps4QeNO0jIHLWZ+B3UCJ4WViP4NgSTDDu5blDMKNMQysylJgs14Xz2b4+/I9A3+OL8OPEzfxqgcFPyMoztAATgf8vPuM4U3hLLByniArhv8//zB83XoKzGfi5wZHy/8fvxg4nQ0Y3lYuYBAoC2F4D3Q0LvWgECQ5DYCj4c8/BiZONqLaTKSqBxk62iIaDYHREBgNgdEQGA2BAQ8BACMzBRDyXK0iAAAAAElFTkSuQmCC">
-    </a>
-    <div class="media-body">
-      <div class="media-heading">
-        <a href="" class="comment_id"># {{ comment.pk }}</a>
-        <a href="#">{{ comment.user }}</a>
+<div class="comment-item" data-id="{{ comment.pk }}">
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object img-circle" data-src="holder.js/32x32/vine" alt="32x32"
+                 style="width: 32px; height: 32px;"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABp0lEQVRYR2O0vL3mP8MAAsZRB4yGwGgIjIbAaAgM2hD4+/ELw8cZ2xh+P33LwBfnzMCuLsvwfsomhp/n7zII5vkxcNrooNQgpKqHacZZF3zZdpqBVU6UgUmEj+FN6VwGbi9TBkZ2NgZubxOGF7E9DDwhNgyMjAwMnPZ6DG8blzBw2ukxsGvL4VQvMbeQgYmXE6Paw1sZ/XnzkeFlUj8Dl6shA3+WDwMTMzPD9zO3GD5M3Mgg1JnI8CZjCthAvlgnBt5QOwZ86sVm5jIwc3EQ74B/v/8wMPz9x/Dz0n2GD5M3MYhPy2H4duI6w0cgW6QrhYFdQ4bhy6aTDJ+W7GUQn5XHwMgNNJyAemy1Ps4QeNO0jIHLWZ+B3UCJ4WViP4NgSTDDu5blDMKNMQysylJgs14Xz2b4+/I9A3+OL8OPEzfxqgcFPyMoztAATgf8vPuM4U3hLLByniArhv8//zB83XoKzGfi5wZHy/8fvxg4nQ0Y3lYuYBAoC2F4D3Q0LvWgECQ5DYCj4c8/BiZONqLaTKSqBxk62iIaDYHREBgNgdEQGA2BAQ8BACMzBRDyXK0iAAAAAElFTkSuQmCC">
+        </a>
+
+        <div class="media-body">
+            <div class="media-heading">
+                <a href="" class="comment_id"># {{ comment.pk }}</a>
+                <a href="#">{{ comment.user }}</a>
           <span>
             <a href=""><i class="glyphicon glyphicon-chevron-up"></i></a>
             {{ comment.rating }}
@@ -14,10 +17,12 @@
             <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>
             <a class="btn btn-xs btn-warning" id="report_abuse_link">Пожаловаться</a>
           </span>
-        <small class="pull-right">{{ comment.date|timesince }}</small>
-{#          TODO: display date as vasa said #}
-      </div>
-      <span class="lorem_p1 lorem-marker"><p>{{ comment.text }}</p></span>
+                <small class="pull-right">{{ comment.date|timesince }}</small>
+                {#          TODO: display date as vasa said #}
+            </div>
+            <span class="lorem_p1 lorem-marker"><p>{{ comment.text }}</p></span>
+            <small class="action-reply"><i class="fa fa-reply"></i> ответить</small>
+            <div class="edit-target"></div>
+        </div>
     </div>
-  </div>
 </div>

@@ -11,10 +11,10 @@ class CommentCreateView(View):
     def post(self, request, *args, **kwargs):
         from django.contrib.auth.models import User
         user = User.objects.get(pk=1)  # TODO: remove placeholder
-        comment_data = loads(kwargs["comment_data"])
+        comment_data = loads(request.POST["comment_data"])
         comment_data["user"] = user
-        comment = create_comment(kwargs["comment_data"])
-        return render(request, "comments/comment.html", comment=comment)
+        comment = create_comment(comment_data)
+        return render(request, "comments/comment.html", {"comment": comment})
 
 
 class CommentDeleteView(View):

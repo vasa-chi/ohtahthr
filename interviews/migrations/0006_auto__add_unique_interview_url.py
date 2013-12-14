@@ -10,6 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding unique constraint on 'Interview', fields ['url']
         db.create_unique(u'interviews_interview', ['url'])
+        pass
 
 
     def backwards(self, orm):

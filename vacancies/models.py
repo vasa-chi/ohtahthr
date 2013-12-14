@@ -46,4 +46,4 @@ class Vacancy(Base):
         return reverse("vacancy_detail", kwargs={"pk": self.pk})
 
     def get_article_type(self):
-        return 1
+        return 0

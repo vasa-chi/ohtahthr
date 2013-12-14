@@ -1,18 +1,12 @@
 # -*- coding: utf-8 -*-
-from django.db.models import F
 from taggit.models import Tag
+from interviews.models import Interview
+from vacancies.models import Vacancy
 
-#TODO: last_edit date will be updated on UPDATE call?
-
-
-def inc_rating(pk, model):
-    model.objects.select_for_update().get(pk=pk).update(rating=F("rating") + 1)
-    #TODO: notify
-
-
-def dec_ration(pk, model):
-    model.objects.select_for_update().get(pk=pk).update(rating=F("rating") - 1)
-    #TODO: notify
+TYPE_MATCH_MAP = {
+    0: Vacancy,
+    1: Interview
+}
 
 
 def get_tags(tag_names):

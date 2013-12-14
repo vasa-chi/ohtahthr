@@ -149,7 +149,7 @@
             type         : changeType
           })}
         }).done(function (result) {
-            $container.text(result)
+            $container.text(result.rating)
           });
       });
   });

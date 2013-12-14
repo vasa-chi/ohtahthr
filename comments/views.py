@@ -22,8 +22,8 @@ class CommentDeleteView(View):
     def post(self, request, *args, **kwargs):
         from django.contrib.auth.models import User
         user = User.objects.get(pk=1)  # TODO: remove placeholder
-        pk = loads(kwargs["comment_data"])["pk"]
-        delete_comment(pk, user)
+        comment_data = loads(request.POST["comment_data"])
+        delete_comment(comment_data["pk"], user)
         return HttpResponse()
 
 
@@ -32,6 +32,6 @@ class CommentUpdateView(View):
     def post(self, request, *args, **kwargs):
         from django.contrib.auth.models import User
         user = User.objects.get(pk=1)  # TODO: remove placeholder
-        data = kwargs["comment_data"]
-        comment = update_comment(data["pk"], data["text"], user)
+        comment_data = loads(request.POST["comment_data"])
+        comment = update_comment(comment_data["pk"], comment_data["text"], user)
         return render(request, "comments/comment.html", comment=comment)

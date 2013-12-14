@@ -26,3 +26,7 @@ class Base(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    @property
+    def first_line_comments(self):
+        return self.comments.filter(refer_to__isnull=True)

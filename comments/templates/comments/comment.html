@@ -23,6 +23,13 @@
             <span class="lorem_p1 lorem-marker"><p>{{ comment.text }}</p></span>
             <small class="action-reply"><i class="fa fa-reply"></i> ответить</small>
             <div class="edit-target"></div>
+            {% if comment.childs %}
+                {% with template_name="comments/comment.html" %}
+                    {% for child in comment.childs.all %}
+                        {% include template_name with comment=child top=0 %}
+                    {% endfor %}
+                {% endwith %}
+            {% endif %}
         </div>
     </div>
 </div>

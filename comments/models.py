@@ -23,7 +23,7 @@ class Comment(models.Model):
     """
     refer_to = models.ForeignKey("self", verbose_name=u"родительский комментарий", null=True, blank=True,
                                  related_name="childs")
-    text = models.TextField(max_length=2000, verbose_name=u"комментарий")
+    text = models.TextField(max_length=2000, verbose_name=u"комментарий", null=False, blank=False)
     object = GenericForeignKey("content_type", "object_id")
     object_id = models.PositiveIntegerField(verbose_name=u"id объекта комментария", null=True, blank=True)
     content_type = models.ForeignKey(ContentType, null=True)

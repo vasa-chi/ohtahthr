@@ -60,9 +60,11 @@
             <div class="hr-footer">
                 {% if detail %}
                     {% include "comments/add_comment.html" %}
-                    {% if item.comments.all %}
-                        {% include "comments/comments_list.html" with comments=item.comments.all %}
-                    {% endif %}
+                    <div class="comment-list">
+                        {% if item.first_line_comments.all %}
+                            {% include "comments/comments_list.html" with comments=item.first_line_comments.all %}
+                        {% endif %}
+                    </div>
                     {#      TODO: buttons here #}
                 {% endif %}
             </div>

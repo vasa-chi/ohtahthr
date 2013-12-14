@@ -60,7 +60,8 @@ INSTALLED_APPS = (
     "ohthathr",
     "vacancies",
     "comments",
-    "interviews"
+    "interviews",
+    "rating"
 )
 
 MIDDLEWARE_CLASSES = (

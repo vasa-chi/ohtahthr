@@ -134,5 +134,23 @@
         $target.after($edit);
         $edit.find('textarea').focus();
       })
+      .on('click', '.comment-rating-wrapper .glyphicon', function () {
+        var $this = $(this),
+          $container = $this.closest('.comment-rating-wrapper').find('.comment-rating'),
+          $comment = $this.closest('.comment-item'),
+          changeType = $this.hasClass('glyphicon-chevron-up') ? 1 : 0;
+
+        $.ajax({
+          url    : '/rate/',
+          method : 'POST',
+          data   : {rating_data : JSON.stringify({
+            object_pk    : $comment.data('id'),
+            article_type : $comment.data('type'),
+            type         : changeType
+          })}
+        }).done(function (result) {
+            $container.text(result)
+          });
+      });
   });
 }(jQuery));

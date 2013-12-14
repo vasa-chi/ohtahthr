@@ -1,4 +1,4 @@
-<div class="comment-item" data-id="{{ comment.pk }}">
+<div class="comment-item" data-id="{{ comment.pk }}" data-type="{{ comment.get_item_type }}">
     <div class="media">
         <a class="pull-left" href="#">
             <img class="media-object img-circle" data-src="holder.js/32x32/vine" alt="32x32"
@@ -10,11 +10,11 @@
             <div class="media-heading">
                 <a href="" class="comment_id"># {{ comment.pk }}</a>
                 <a href="#">{{ comment.user }}</a>
-          <span>
-            <a href=""><i class="glyphicon glyphicon-chevron-up"></i></a>
-            {{ comment.rating }}
-            <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
-            <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>
+          <span class="comment-rating-wrapper">
+            <a><i class="glyphicon glyphicon-chevron-up"></i></a>
+            <span class="comment-rating">{{ comment.rating }}</span>
+            <a><i class="glyphicon glyphicon-chevron-down"></i></a>
+            <a><i class="glyphicon glyphicon-star-empty"></i></a>
             <a class="btn btn-xs btn-warning" id="report_abuse_link">Пожаловаться</a>
           </span>
                 <small class="pull-right">

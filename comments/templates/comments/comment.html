@@ -26,8 +26,9 @@
                 </small>
                 {#          TODO: display date as vasa said #}
             </div>
-            <span class="lorem_p1 lorem-marker"><p>{{ comment.text }}</p></span>
+            <div class="comment-text"><p>{{ comment.text }}</p></div>
             <small class="action-reply"><i class="fa fa-reply"></i> ответить</small>
+            <small class="action-edit"><i class="fa fa-pencil"></i> изменить</small>
             <div class="edit-target"></div>
             {% if comment.childs %}
                 {% with template_name="comments/comment.html" %}

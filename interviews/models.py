@@ -39,5 +39,5 @@ class Interview(Base):
     def get_edit_heading(self):
         return u"{0} - редактирование".format(self.title)
 
-    def get_article_type(self):
+    def get_item_type(self):
         return 1

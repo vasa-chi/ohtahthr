@@ -45,5 +45,5 @@ class Vacancy(Base):
     def get_absolute_url(self):
         return reverse("vacancy_detail", kwargs={"pk": self.pk})
 
-    def get_article_type(self):
+    def get_item_type(self):
         return 0

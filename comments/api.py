@@ -28,8 +28,8 @@ def create_comment(data):
             refer_to = refer_to[0]
     else:
         refer_to = None
-    model_class = TYPE_MATCH_MAP[data["article_type"]]
-    object = get_object_or_404(model_class, pk=data["object_id"])
+    model_class = TYPE_MATCH_MAP[data["item_type"]]
+    object = get_object_or_404(model_class, pk=data["item_id"])
     c = Comment.objects.create(refer_to=refer_to,
                                object=object,
                                text=data["text"],

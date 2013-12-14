@@ -64,19 +64,18 @@
 
       if (value) {
         $.ajax({
-          url      : '/comments/add/',
-          method   : 'POST',
-          dataType : 'json',
-          data     : {
+          url    : '/comments/add/',
+          method : 'POST',
+          data   : {
             comment_data : JSON.stringify({
               article_type : $parent.data('type'),
               object_id    : $parent.data('id'),
               text         : value
-            })},
-          success  : function (result) {
-            $target.append($(result));
-          }
-        });
+            })}
+        }).done(function (result) {
+            console.log($target);
+            $target.prepend($(result));
+          });
       }
     }).on('click', '.action-reply', function (evt) {
         evt.preventDefault();

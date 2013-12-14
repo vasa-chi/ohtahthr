@@ -1,27 +1,11 @@
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \000036;
-  }
-}
+/* line 6, ../../app/styles/main.scss */
 
 html,
 body {
   height: 100%;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000310;
-  }
-}
+/* line 10, ../../app/styles/main.scss */
 
 body {
   background-color: #ededed;
@@ -29,15 +13,7 @@ body {
   color: #333333;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000316;
-  }
-}
+/* line 16, ../../app/styles/main.scss */
 
 .navbar-nav > li > a.hr-add-button {
   padding-top: 5px;
@@ -47,74 +23,35 @@ body {
   vertical-align: middle;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000324;
-  }
-}
+/* line 24, ../../app/styles/main.scss */
 
 .hr-navbar {
   margin-bottom: 0;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000328;
-  }
-}
+/* line 28, ../../app/styles/main.scss */
 
 .hr-navigation {
   z-index: 1000;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000332;
-  }
-}
+/* line 32, ../../app/styles/main.scss */
 
 .hr-container {
   background-color: #ededed;
   padding-left: 0;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000336;
-  }
-}
+/* line 36, ../../app/styles/main.scss */
 
 .col-md-10.hr-container {
   width: auto;
+  max-width: 100%;
   padding-left: 199px;
   margin-left: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000342;
-  }
-}
+/* line 43, ../../app/styles/main.scss */
 
 .hr-settings {
   box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
@@ -122,29 +59,13 @@ body {
   background-color: #fafafa;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000350;
-  }
-}
+/* line 51, ../../app/styles/main.scss */
 
 .hr-row {
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000353;
-  }
-}
+/* line 54, ../../app/styles/main.scss */
 
 .hr-row .hr-item {
   box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
@@ -153,15 +74,7 @@ body {
   background-color: #fafafa;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000356;
-  }
-}
+/* line 57, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head {
   width: 100%;
@@ -172,59 +85,27 @@ body {
   display: table;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000364;
-  }
-}
+/* line 65, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head .row {
   display: table-row;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000367;
-  }
-}
+/* line 68, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head .row .hr-head-name-wrapper,
 .hr-row .hr-item .hr-head .row .hr-head-info-wrapper {
   display: table-cell;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000371;
-  }
-}
+/* line 72, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head .row .hr-head-name-wrapper {
   border-right: 1px solid #d4d4d4;
   width: 83.33333%;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000376;
-  }
-}
+/* line 77, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head .row .hr-head-info-wrapper {
   font-size: 75%;
@@ -232,29 +113,13 @@ body {
   vertical-align: top;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000383;
-  }
-}
+/* line 84, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head .row .hr-head-info-wrapper .hr-head-info {
   float: right;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000390;
-  }
-}
+/* line 91, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-head h1 {
   padding-top: 10px;
@@ -264,30 +129,14 @@ body {
   padding-right: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \0000399;
-  }
-}
+/* line 100, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-body {
   padding-left: 1em;
   padding-right: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003104;
-  }
-}
+/* line 105, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-timestamp {
   padding-left: 1em;
@@ -295,201 +144,94 @@ body {
   padding-bottom: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003111;
-  }
-}
+/* line 112, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-tags .label + .label {
   margin-left: 0.5em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003116;
-  }
-}
+/* line 117, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-info {
   border-top: 1px solid #d4d4d4;
   padding: 1em 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003121;
-  }
-}
+/* line 122, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer {
   border-top: 1px solid #d4d4d4;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003124;
-  }
-}
+/* line 125, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list {
   font-size: 90%;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003129;
-  }
-}
+/* line 130, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:nth-child(odd) {
   background-color: #fafafa;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003132;
-  }
-}
+/* line 133, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:hover {
   background-color: #f2f2f2;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003137;
-  }
-}
+/* line 138, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list .comment-item {
   padding-top: 1em;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003140;
-  }
-}
+/* line 143, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply {
   color: #808080;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003143;
-  }
-}
+/* line 146, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover {
   color: #333333;
   cursor: pointer;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003150;
-  }
-}
+/* line 153, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list > .comment-item {
   padding-left: 1em;
   padding-right: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003154;
-  }
-}
+/* line 157, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer .comment-list > .comment-item:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003161;
-  }
-}
+/* line 164, ../../app/styles/main.scss */
 
 .hr-row .hr-item .hr-footer > .add-comment {
   padding: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003168;
-  }
-}
+/* line 171, ../../app/styles/main.scss */
 
 .hr-add-post-container {
   background-color: #ededed;
   padding-left: 0;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003172;
-  }
-}
+/* line 175, ../../app/styles/main.scss */
 
 .hr-add-post {
   box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
@@ -499,15 +241,7 @@ body {
   padding: 1em;
 }
 
-@media -sass-debug-info {
-  filename {
-    font-family: file\:\/\/\/Users\/vasa\/WebstormProjects\/ohthathr\/app\/styles\/main\.scss;
-  }
-
-  line {
-    font-family: \00003178;
-  }
-}
+/* line 181, ../../app/styles/main.scss */
 
 .nav.nav-pills.nav-stacked li > a {
   -ms-border-radius: 0px;

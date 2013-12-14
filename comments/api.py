@@ -50,11 +50,12 @@ def update_comment(comment_pk, user, text):
                 Http404 - если комментарий не найден.
     """
     try:
-        c = Comment.objects.select_for_update().filter(pk=comment_pk, user=user)
+        c = Comment.objects.select_for_update().get(pk=comment_pk, user=user)
     except Comment.DoesNotExist:
         raise Http404()
     else:
-        c.update(text=text)
+        c.text = text
+        c.save(update_fields=["text"])
         return c[0]
         #TODO: notify
 

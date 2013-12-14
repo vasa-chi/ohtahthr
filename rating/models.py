@@ -17,7 +17,7 @@ class RatedByUser(models.Model):
 
     """
 
-    ACTION_TYPE_CHOICES = ((0, "0"),
+    ACTION_TYPE_CHOICES = ((0, "-"),
                            (1, "+"))
 
     object = GenericForeignKey("content_type", "object_id")

@@ -11,4 +11,4 @@ class RatingView(View):
         data = loads(request.POST["rating_data"])
         from django.contrib.auth.models import User
         data["user"] = User.objects.get(pk=1)  # request.user TODO: remove placeholder
-        return HttpResponse(dumps({"rating":rating_manipulation(data)}, content_type="application/json"))
+        return HttpResponse(dumps({"rating": rating_manipulation(data)}), content_type="application/json")

@@ -56,7 +56,7 @@ def update_comment(comment_pk, user, text):
     else:
         c.text = text
         c.save(update_fields=["text"])
-        return c[0]
+        return c
         #TODO: notify
 
 

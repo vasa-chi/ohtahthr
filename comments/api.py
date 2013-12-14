@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from models import Comment
 from django.http import Http404
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from interviews.models import Interview
 from vacancies.models import Vacancy
 
 TYPE_MATCH_MAP = {
-    "0": Vacancy,
-    "1": Interview
+    0: Vacancy,
+    1: Interview
 }
 
 

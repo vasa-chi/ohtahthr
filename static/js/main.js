@@ -54,37 +54,37 @@
       locale : 'ru-RU'
     });
 
-    $('div.hr-item').on('click', '.hr-footer>.add-comment button',function (evt) {
-      evt.preventDefault();
-
-      var $this = $(this),
-        $parent = $this.parents('.hr-item'),
-        $target = $parent.find('.comment-list'),
-        value = $this.closest('.add-comment').find('textarea').val();
-
-      if (value) {
-        $.ajax({
-          url    : '/comments/add/',
-          method : 'POST',
-          data   : {
-            comment_data : JSON.stringify({
-              article_type : $parent.data('type'),
-              object_id    : $parent.data('id'),
-              text         : value
-            })}
-        }).done(function (result) {
-            console.log($target);
-            $target.prepend($(result));
-          });
-      }
-    }).on('click', '.action-reply', function (evt) {
+    $('div.hr-item')
+      .on('click', '.hr-footer>.add-comment button', function (evt) {
         evt.preventDefault();
 
+        var $this = $(this),
+          $parent = $this.parents('.hr-item:first'),
+          $target = $parent.find('.comment-list'),
+          value = $this.closest('.add-comment').find('textarea').val();
+
+        if (value) {
+          $.ajax({
+            url    : '/comments/add/',
+            method : 'POST',
+            data   : {
+              comment_data : JSON.stringify({
+                article_type : $parent.data('type'),
+                object_id    : $parent.data('id'),
+                text         : value
+              })}
+          }).done(function (result) {
+              console.log($target);
+              $target.prepend($(result));
+            });
+        }
+      })
+      .on('click', '.action-reply', function () {
         var $this = $(this).hide(),
           $target = $this.siblings('div.edit-target:first'),
           $edit = $('.add-comment:first').clone(),
-          $parent = $this.parents('.hr-item'),
-          $comment = $this.parents('.comment-item');
+          $parent = $this.parents('.hr-item:first'),
+          $comment = $this.parents('.comment-item:first');
 
 
         $edit.on('click', 'button', function () {
@@ -92,10 +92,10 @@
             url     : '/comments/add/',
             method  : 'POST',
             data    : {comment_data : JSON.stringify({
-              article_type : $parent.data('type'),
-              object_id    : $parent.data('id'),
-              refer_to     : $comment.data('id'),
-              text         : $edit.find('textarea').val()
+              item_type : $parent.data('type'),
+              item_id   : $parent.data('id'),
+              refer_to  : $comment.data('id'),
+              text      : $edit.find('textarea').val()
             })},
             success : function (result) {
               $target.after($(result));
@@ -106,6 +106,32 @@
         });
 
         $target.append($edit);
+        $edit.find('textarea').focus();
+      })
+      .on('click', '.action-edit', function () {
+        var $this = $(this).hide(),
+          $target = $this.siblings('.comment-text').hide(),
+          text = $target.text(),
+          $edit = $('.add-comment:first').clone()
+            .find('button').text('Сохранить').end()
+            .find('textarea').val(text).end(),
+          $comment = $this.parents('.comment-item:first');
+
+        $edit.on('click', 'button', function () {
+          $.ajax({
+            url     : '/comments/edit/',
+            method  : 'POST',
+            data    : {comment_data : JSON.stringify({
+              comment_pk : $comment.data('id'),
+              text       : $edit.find('textarea').val()
+            })},
+            success : function (result) {
+              $comment.replaceWith(result);
+            }
+          });
+        });
+
+        $target.after($edit);
         $edit.find('textarea').focus();
       })
   });

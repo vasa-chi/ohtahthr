@@ -194,13 +194,15 @@ body {
 
 /* line 143, ../../app/styles/main.scss */
 
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply {
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply,
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit {
   color: #808080;
 }
 
 /* line 146, ../../app/styles/main.scss */
 
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover {
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover,
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit:hover {
   color: #333333;
   cursor: pointer;
 }

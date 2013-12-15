@@ -153,12 +153,14 @@
           });
       });
 
-    var tags = $('#tags')
+    var tags = $('#tag-input')
       .tagsManager({
-        prefilled     : ['x', 'yyy', 'zzzzzzz'],
-        tagsContainer : '#tag-container',
-        maxTags       : 10
-      })
+        prefilled         : ['x', 'yyy', 'zzzzzzz'],
+        tagsContainer     : '#tag-container',
+        maxTags           : 10,
+        hiddenTagListName : 'tags'
+      });
+    tags
       .typeahead({
         name  : 'arabic',
         local : ['one', 'two', 'three']

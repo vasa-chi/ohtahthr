@@ -61,7 +61,8 @@ INSTALLED_APPS = (
     "vacancies",
     "comments",
     "interviews",
-    "rating"
+    "rating",
+    "tags"
 )
 
 MIDDLEWARE_CLASSES = (

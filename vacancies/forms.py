@@ -7,4 +7,4 @@ class VacancyForm(BaseForm):
 
     class Meta:
         model = Vacancy
-        fields = ("title", "url", "description", "why")
+        fields = ("title", "url", "description", "why", "tags")

@@ -157,12 +157,12 @@
       .tagsManager({
         tagsContainer : '#tag-container',
         maxTags       : 10,
-        output        : '#tags'
+        output        : '#id_tags'
       });
     tags
       .typeahead({
-        name  : 'arabic',
-        local : ['one', 'two', 'three']
+        name   : 'arabic',
+        remote : '/gettags?q=%QUERY'
       })
       .on('typeahead:selected', function (e, d) {
         tags.tagsManager("pushTag", d.value);

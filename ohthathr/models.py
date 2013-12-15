@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.generic import GenericRelation
 from taggit.managers import TaggableManager
+from tags.models import CountedTagThrough
 
 
 class Base(models.Model):
@@ -15,7 +16,8 @@ class Base(models.Model):
     date = models.DateTimeField(auto_now_add=True, verbose_name=u"дата добавления")
     last_edit = models.DateTimeField(auto_now=True, verbose_name=u"дата последнего изменения", null=True, default=None)
     description = models.TextField(verbose_name=u"Описание")
-    tags = TaggableManager(verbose_name=u"теги",
+    tags = TaggableManager(through=CountedTagThrough,
+                           verbose_name=u"теги",
                            help_text=u"Несколько тегов, минимум 1. Название компании, должности, технологии.")
     deleted = models.BooleanField(verbose_name=u"удалено?", default=False)
     comments = GenericRelation(Comment)
@@ -29,4 +31,4 @@ class Base(models.Model):
 
     @property
     def first_line_comments(self):
-        return self.comments.filter(refer_to__isnull=True)
+        return self.comments.filter(refer_to__isnull=True).select_related("user")

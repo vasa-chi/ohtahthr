@@ -5,7 +5,7 @@ from taggit.forms import TagField
 
 class BaseForm(ModelForm):
 
-    tags = TagField()
+    tags = TagField(label=u"Теги", help_text=u"От 1 до 10 тегов. Название компании, технологии или ощущения")
 
     def __init__(self, *args, **kwargs):
         super(BaseForm, self).__init__(*args, **kwargs)

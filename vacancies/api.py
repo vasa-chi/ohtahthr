@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from models import Vacancy
-from ohthathr.api import get_tags
-from django.http import Http404
 
 
 def create_vacancy(data):
@@ -18,7 +16,7 @@ def create_vacancy(data):
                                description=data["description"],
                                why=data["why"]
                                )
-    #v.tags.add(get_tags(data["tags"]))
+    v.tags.add(*data["tags"])
     return v
 
 
@@ -29,8 +27,8 @@ def update_vacancy(vacancy, changed_data):
             changed_data - словарь с измененными данными.
     """
     if "tags" in changed_data:
-        vacancy.tags.all.delete()
-        vacancy.tags = get_tags(changed_data.pop("tags"))
+        vacancy.tags.clear()
+        vacancy.tags.add(*changed_data.pop("tags"))
     if "url" in changed_data:
         pass  # TODO: generate another content?
     Vacancy.objects.select_for_update().filter(pk=vacancy.pk).update(**changed_data)

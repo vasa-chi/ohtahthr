@@ -9,14 +9,3 @@ TYPE_MATCH_MAP = {
     1: Interview,
     2: Comment
 }
-
-
-def get_tags(tag_names):
-    tags = []
-    for tag_name in tag_names:
-        qs = Tag.objects.filter(name__exact=tag_name)
-        if qs.exists():
-            tags.append(qs[0])
-        else:
-            tags.append(Tag.objects.create(name=tag_name))
-    return tags

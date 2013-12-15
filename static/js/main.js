@@ -70,8 +70,8 @@
             data   : {
               comment_data : JSON.stringify({
                 item_type : $parent.data('type'),
-                object_id    : $parent.data('id'),
-                text         : value
+                object_id : $parent.data('id'),
+                text      : value
               })}
           }).done(function (result) {
               console.log($target);
@@ -144,13 +144,37 @@
           url    : '/rate/',
           method : 'POST',
           data   : {rating_data : JSON.stringify({
-            object_pk    : $comment.data('id'),
+            object_pk : $comment.data('id'),
             item_type : $comment.data('type'),
-            type         : changeType
+            type      : changeType
           })}
         }).done(function (result) {
             $container.text(result.rating)
           });
       });
+
+    var tags = $('#tags')
+      .tagsManager({
+        prefilled     : ['x', 'yyy', 'zzzzzzz'],
+        tagsContainer : '#tag-container',
+        maxTags       : 10
+      })
+      .typeahead({
+        name  : 'arabic',
+        local : ['one', 'two', 'three']
+      })
+      .on('typeahead:selected', function (e, d) {
+        tags.tagsManager("pushTag", d.value);
+      })
+      .on('tm:hide', function () {
+        $(this).closest('.twitter-typeahead').hide()
+      })
+      .on('tm:show', function () {
+        $(this).closest('.twitter-typeahead').show()
+      });
+
+    $('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');
+    $('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');
+
   });
 }(jQuery));

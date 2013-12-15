@@ -1,254 +1,303 @@
 /* line 6, ../../app/styles/main.scss */
-
-html,
-body {
-  height: 100%;
+html, body {
+    height: 100%;
 }
 
 /* line 10, ../../app/styles/main.scss */
-
 body {
-  background-color: #ededed;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333333;
+    background-color: #ededed;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
 }
 
 /* line 16, ../../app/styles/main.scss */
-
 .navbar-nav > li > a.hr-add-button {
-  padding-top: 5px;
-  padding-bottom: 9px;
-  font-size: 36px;
-  text-align: center;
-  vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 9px;
+    font-size: 36px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /* line 24, ../../app/styles/main.scss */
-
 .hr-navbar {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* line 28, ../../app/styles/main.scss */
-
 .hr-navigation {
-  z-index: 1000;
+    z-index: 1000;
 }
 
 /* line 32, ../../app/styles/main.scss */
-
 .hr-container {
-  background-color: #ededed;
-  padding-left: 0;
+    background-color: #ededed;
+    padding-left: 0;
 }
 
 /* line 36, ../../app/styles/main.scss */
-
 .col-md-10.hr-container {
-  width: auto;
-  max-width: 100%;
-  padding-left: 199px;
-  margin-left: 1em;
+    width: auto;
+    max-width: 100%;
+    padding-left: 199px;
+    margin-left: 1em;
 }
 
 /* line 43, ../../app/styles/main.scss */
-
 .hr-settings {
-  box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
-  padding: 1em;
-  background-color: #fafafa;
+    -webkit-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    -moz-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    padding: 1em;
+    background-color: #fafafa;
 }
 
 /* line 51, ../../app/styles/main.scss */
-
 .hr-row {
-  margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 /* line 54, ../../app/styles/main.scss */
-
 .hr-row .hr-item {
-  box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
-  padding-left: 0;
-  padding-right: 0;
-  background-color: #fafafa;
+    -webkit-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    -moz-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #fafafa;
 }
 
 /* line 57, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head {
-  width: 100%;
-  border-bottom: 1px solid #d4d4d4;
-  margin-bottom: 10px;
-  padding-left: 0;
-  padding-right: 0;
-  display: table;
+    width: 100%;
+    border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    display: table;
 }
 
 /* line 65, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head .row {
-  display: table-row;
+    display: table-row;
 }
 
 /* line 68, ../../app/styles/main.scss */
-
-.hr-row .hr-item .hr-head .row .hr-head-name-wrapper,
-.hr-row .hr-item .hr-head .row .hr-head-info-wrapper {
-  display: table-cell;
+.hr-row .hr-item .hr-head .row .hr-head-name-wrapper, .hr-row .hr-item .hr-head .row .hr-head-info-wrapper {
+    display: table-cell;
 }
 
 /* line 72, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head .row .hr-head-name-wrapper {
-  border-right: 1px solid #d4d4d4;
-  width: 83.33333%;
+    border-right: 1px solid #d4d4d4;
+    width: 83.33333%;
 }
 
 /* line 77, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head .row .hr-head-info-wrapper {
-  font-size: 75%;
-  width: 16.66667%;
-  vertical-align: top;
+    font-size: 75%;
+    width: 16.66667%;
+    vertical-align: top;
 }
 
 /* line 84, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head .row .hr-head-info-wrapper .hr-head-info {
-  float: right;
+    float: right;
 }
 
 /* line 91, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-head h1 {
-  padding-top: 10px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  padding-left: 1em;
-  padding-right: 1em;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* line 100, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-body {
-  padding-left: 1em;
-  padding-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* line 105, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-timestamp {
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
 }
 
 /* line 112, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-tags .label + .label {
-  margin-left: 0.5em;
+    margin-left: 0.5em;
 }
 
 /* line 117, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-info {
-  border-top: 1px solid #d4d4d4;
-  padding: 1em 1em;
+    border-top: 1px solid #d4d4d4;
+    padding: 1em 1em;
 }
 
 /* line 122, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer {
-  border-top: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
 }
 
 /* line 125, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list {
-  font-size: 90%;
+    font-size: 90%;
 }
 
 /* line 130, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:nth-child(odd) {
-  background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 /* line 133, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list:hover > .comment-item:hover {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 /* line 138, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list .comment-item {
-  padding-top: 1em;
-  word-break: break-all;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+    padding-top: 1em;
+    word-break: break-all;
+    hyphens: auto;
 }
 
 /* line 143, ../../app/styles/main.scss */
-
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply,
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit {
-  color: #808080;
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply, .hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit {
+    color: #808080;
 }
 
 /* line 146, ../../app/styles/main.scss */
-
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover,
-.hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit:hover {
-  color: #333333;
-  cursor: pointer;
+.hr-row .hr-item .hr-footer .comment-list .comment-item .action-reply:hover, .hr-row .hr-item .hr-footer .comment-list .comment-item .action-edit:hover {
+    color: #333333;
+    cursor: pointer;
 }
 
 /* line 153, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list > .comment-item {
-  padding-left: 1em;
-  padding-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 /* line 157, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer .comment-list > .comment-item:nth-child(odd) {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 /* line 164, ../../app/styles/main.scss */
-
 .hr-row .hr-item .hr-footer > .add-comment {
-  padding: 1em;
+    padding: 1em;
 }
 
 /* line 171, ../../app/styles/main.scss */
-
 .hr-add-post-container {
-  background-color: #ededed;
-  padding-left: 0;
+    background-color: #ededed;
+    padding-left: 0;
 }
 
 /* line 175, ../../app/styles/main.scss */
-
 .hr-add-post {
-  box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
-  padding-left: 0;
-  padding-right: 0;
-  background-color: #fafafa;
-  padding: 1em;
+    -webkit-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    -moz-box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    box-shadow: rgba(51, 51, 51, 0.2) 0px 0px 2px 1px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #fafafa;
+    padding: 1em;
 }
 
 /* line 181, ../../app/styles/main.scss */
-
 .nav.nav-pills.nav-stacked li > a {
-  -ms-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  padding-top: 5px;
-  padding-bottom: 6px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+
+/* line 188, ../../app/styles/main.scss */
+.tm-input {
+    width: auto;
+    display: inline-block;
+}
+
+.tm-tag {
+    padding: 4px 8px;
+}
+
+.twitter-typeahead .tt-hint {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: lightgray;
+}
+
+.twitter-typeahead .hint-small {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    line-height: 1.5;
+}
+
+.twitter-typeahead .hint-large {
+    height: 45px;
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 6px;
+    line-height: 1.33;
+}
+
+.tt-dropdown-menu {
+    min-width: 160px;
+    margin-top: 2px;
+    padding: 5px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .2);
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.tt-suggestion {
+    display: block;
+    padding: 3px 20px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+    color: #fff;
+    background-color: #0081c2;
+    background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+    background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+    background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+    background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0)
+}
+
+.tt-suggestion.tt-is-under-cursor a {
+    color: #fff;
+}
+
+.tt-suggestion p {
+    margin: 0;
 }

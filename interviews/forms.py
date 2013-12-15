@@ -7,4 +7,4 @@ class InterviewForm(BaseForm):
 
     class Meta:
         model = Interview
-        fields = ("title", "url", "description", "was_success")
+        fields = ("title", "url", "description", "was_success", "tags")

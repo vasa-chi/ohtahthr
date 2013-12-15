@@ -1,7 +1,5 @@
 (function ($) {
   $(function () {
-//    $('.container').ipsum();
-
     function getCookie(name) {
       var cookieValue = null;
       if (document.cookie && document.cookie != '') {
@@ -50,8 +48,9 @@
       }
     });
 
-    $('#some-textarea').wysihtml5({
-      locale : 'ru-RU'
+    $('textarea#id_description').wysihtml5({
+      locale : 'ru-RU',
+      image  : false
     });
 
     $('div.hr-item')

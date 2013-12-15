@@ -155,10 +155,9 @@
 
     var tags = $('#tag-input')
       .tagsManager({
-        prefilled         : ['x', 'yyy', 'zzzzzzz'],
-        tagsContainer     : '#tag-container',
-        maxTags           : 10,
-        hiddenTagListName : 'tags'
+        tagsContainer : '#tag-container',
+        maxTags       : 10,
+        output        : '#tags'
       });
     tags
       .typeahead({

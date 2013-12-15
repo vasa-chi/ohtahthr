@@ -39,11 +39,12 @@
         tagClass: '',
         validator: null,
         onlyTagList: false,
-        tagList: null,
+        tagList: null
     },
 
     publicMethods = {
         pushTag : function (tag, ignoreEvents) {
+            tag = tag.toLowerCase();
             var $self = $(this), opts = $self.data('opts'), alreadyInList, tlisLowerCase, max, tagId,
             tlis = $self.data("tlis"), tlid = $self.data("tlid"), idx, newTagId, newTagRemoveId, escaped,
             html, $el, lastTagId, lastTagObj;

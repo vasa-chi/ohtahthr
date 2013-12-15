@@ -9,5 +9,7 @@ class BaseForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BaseForm, self).__init__(*args, **kwargs)
-        for field in self.fields.values():
+        for name, field in self.fields.items():
             field.widget.attrs["class"] = field.widget.attrs.get("class", "") + " form-control"
+            if name == "tags":
+                field.widget.input_type = "hidden"

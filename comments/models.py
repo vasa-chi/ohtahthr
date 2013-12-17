@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from django.db import models
 from django.contrib.contenttypes.generic import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
@@ -30,7 +29,7 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True, verbose_name=u"дата создания")
     date_edited = models.DateTimeField(auto_now=True, default=None, null=True, blank=True)
     deleted = models.BooleanField(verbose_name=u"удален", default=False)
-    user = models.ForeignKey(User, verbose_name=u"пользователь", null=True, blank=True)
+    user = models.ForeignKey(User, verbose_name=u"пользователь")
     rating = models.IntegerField(verbose_name=u"рейтинг", default=0)
 
     class Meta:

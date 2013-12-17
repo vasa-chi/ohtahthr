@@ -13,18 +13,19 @@
                         <div class="hr-head-info">
                             <a href="#" class="hr-username">{{ item.added_by.username }}</a>
                             <a href="#" class="hr-postdate">{{ item.date|timesince }}</a>
-                            {#                            {% if item.added_by == request.user %}#} {#TODO: user check#}
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-wrench"></span> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{% url url_edit_name item.pk %}"><span
-                                            class="glyphicon glyphicon-pencil"></span> Редактировать</a></li>
-                                    <li><a href="{% url url_delete_name item.pk %}"><span
-                                            class="glyphicon glyphicon-trash"></span> Удалить</a></li>
-                                </ul>
-                            </div>
+                            {% if item.added_by_id == request.user.pk %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-wrench"></span> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{% url url_edit_name item.pk %}"><span
+                                                class="glyphicon glyphicon-pencil"></span> Редактировать</a></li>
+                                        <li><a href="{% url url_delete_name item.pk %}"><span
+                                                class="glyphicon glyphicon-trash"></span> Удалить</a></li>
+                                    </ul>
+                                </div>
+                            {% endif %}
                             {#                            {% endif %}#}
                             {# TODO: normalize date as vasa said #}
                         </div>
@@ -49,7 +50,7 @@
                     <a href=""><i class="glyphicon glyphicon-chevron-up" style="margin-left: 3em"></i></a>
                     {{ item.rating }}
                     <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
-                    <a class="btn btn-xs btn-warning" id="report_abuse_link">Пожаловаться</a>
+                    <a class="btn btn-xs btn-warning" id="report_abuse_link" href="{% url "create_feedback_for" objtype=item.get_item_type pk=item.pk %}">Пожаловаться</a>
                 </div>
                 <div class="pull-right">
                     <button class="btn btn-xs btn-primary">twittah</button>

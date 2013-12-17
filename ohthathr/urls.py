@@ -5,7 +5,8 @@ from interviews.urls import urls as interviews_urls
 from vacancies.urls import urls as vacancies_urls
 from comments.urls import urls as comments_urls
 from rating.urls import urls as rating_urls
-from tags.urls import urlpatterns as tags_urls
+from tags.urls import urls as tags_urls
+from feedback.urls import urls as feeback_urls
 admin.autodiscover()
 
 urlpatterns = patterns("",
@@ -20,3 +21,4 @@ urlpatterns += vacancies_urls
 urlpatterns += comments_urls
 urlpatterns += rating_urls
 urlpatterns += tags_urls
+urlpatterns += feeback_urls

@@ -1,0 +1,14 @@
+<h3>
+    {{ heading }}
+</h3>
+<hr>
+<form role="form" method="post">
+    {% csrf_token %}
+    {% include "forms/errors.html" with errors=form.non_field_errors %}
+    {% include "forms/form_field.html" with field=form.type %}
+    {% include "forms/form_field.html" with field=form.email %}
+    {% include "forms/form_field.html" with field=form.text %}
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </div>
+</form>

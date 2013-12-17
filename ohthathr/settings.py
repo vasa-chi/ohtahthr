@@ -62,7 +62,8 @@ INSTALLED_APPS = (
     "comments",
     "interviews",
     "rating",
-    "tags"
+    "tags",
+    "feedback"
 )
 
 MIDDLEWARE_CLASSES = (

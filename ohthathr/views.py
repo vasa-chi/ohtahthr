@@ -22,25 +22,24 @@ class BaseDetailView(DetailView):
 
     def get_queryset(self):
         return (super(BaseDetailView, self).get_queryset()
-                                           .filter(deleted=False) # filter(deleted=False, added_by=self.request.user)
+                                           .filter(deleted=False) # TODO filter(deleted=False, added_by=self.request.user)
                                            .select_related("added_by", "comments", "comments__user")
                                            .prefetch_related('tagged_items__tag'))
 
 
 class BaseCRUDMixin(object):
-    api_func = None
     success_url = None
 
     def get_queryset(self):
         return (super(BaseCRUDMixin, self).get_queryset()
-                                          .filter(deleted=False) # filter(deleted=False, added_by=self.request.user)
+                                          .filter(deleted=False) # TODO filter(deleted=False, added_by=self.request.user)
                                           .select_related("added_by", "comments", "comments__user")
                                           .prefetch_related('tagged_items__tag'))
 
     def get_object(self, queryset=None):
         qs = self.get_queryset()
         try:
-            return qs.get(pk=self.kwargs["pk"])  # , added_by=self.request.user)
+            return qs.get(pk=self.kwargs["pk"])  # , TODO added_by=self.request.user)
         except self.model.DoesNotExist:
             raise Http404()
 

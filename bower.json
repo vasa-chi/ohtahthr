@@ -6,7 +6,8 @@
     "bootstrap": "~3.0.3",
     "lorem": "*",
     "semantic": "~0.10.0",
-    "bootstrap3-wysihtml5-bower": "~0.2.2"
+    "bootstrap3-wysihtml5-bower": "~0.2.2",
+    "font-awesome": "~4.0.3"
   },
   "devDependencies": {}
 }

@@ -35,6 +35,7 @@ body {
 
 .col-md-10.hr-container {
   width        : auto;
+  max-width    : 100%;
   padding-left : 199px;
   margin-left  : 1em;
 }
@@ -101,6 +102,12 @@ body {
       padding-right : $hr-padding-right;
     }
 
+    .hr-timestamp {
+      padding-left   : $hr-padding-left;
+      padding-right  : $hr-padding-right;
+      padding-bottom : $hr-default-padding;
+    }
+
     .hr-tags {
       .label + .label {
         margin-left : 0.5em;
@@ -114,41 +121,48 @@ body {
 
     .hr-footer {
       border-top : 1px solid $divider_color;
-      //      padding-bottom : 10px;
 
       .comment-list {
 
+        font-size : 90%;
+
         &:hover {
-          .comment-item:nth-child(odd) {
+          > .comment-item:nth-child(odd) {
             background-color : $white;
           }
-          .comment-item:hover {
+          > .comment-item:hover {
             background-color : darken($white, 3%);
           }
         }
 
         .comment-item {
+          padding-top : $hr-default-padding;
+          word-break  : break-all;
+          hyphens     : auto;
+
+          .action-reply, .action-edit {
+            color : #808080;
+
+            &:hover {
+              color  : $black;
+              cursor : pointer;
+            }
+          }
+        }
+
+        > .comment-item {
           padding-left  : $hr-padding-left;
           padding-right : $hr-padding-right;
-          padding-top   : $hr-default-padding;
-
-          font-size     : 90%;
 
           &:nth-child(odd) {
-            background-color : darken($white, 3%);
-          }
 
-          &:last-child {
+            background-color : darken($white, 3%);
           }
         }
       }
 
-      .add-comment {
+      > .add-comment {
         padding : $hr-default-padding;
-
-        .col-xs-10 {
-          padding-left : 0;
-        }
       }
     }
   }
@@ -169,4 +183,9 @@ body {
 
   padding-top    : 5px;
   padding-bottom : 6px;
+}
+
+.tm-input {
+  width   : auto;
+  display : inline-block;
 }

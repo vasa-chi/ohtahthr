@@ -29,7 +29,7 @@ def create_comment(data):
     else:
         refer_to = None
     model_class = TYPE_MATCH_MAP[data["item_type"]]
-    object = get_object_or_404(model_class, pk=data["item_id"])
+    object = get_object_or_404(model_class, pk=data["object_id"])
     c = Comment.objects.create(refer_to=refer_to,
                                object=object,
                                text=data["text"],
@@ -69,10 +69,9 @@ def delete_comment(comment_pk, user):
                Http404 - если комментарий не найден.
     """
     try:
-        (Comment.objects
-         .select_for_update()
-         .filter(pk=comment_pk, user=user)
-         .update(deleted=True))
+        (Comment.objects.select_for_update()
+                        .filter(pk=comment_pk, user=user)
+                        .update(deleted=True))
     except Comment.DoesNotExist:
         raise Http404()
         #TODO: notify

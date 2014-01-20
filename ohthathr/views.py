@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
+from django.http import HttpResponse
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, Http404
+from api import search
+from json import dumps
 from exceptions import NotImplementedError
 
 
 class BaseListView(ListView):
+    allow_empty = True
+    paginate_by = 10
 
     def get_queryset(self):
         return (super(BaseListView, self).get_queryset()
@@ -22,7 +27,7 @@ class BaseDetailView(DetailView):
 
     def get_queryset(self):
         return (super(BaseDetailView, self).get_queryset()
-                                           .filter(deleted=False) # TODO filter(deleted=False, added_by=self.request.user)
+                                           .filter(deleted=False)  #TODO: filter(deleted=False, added_by=self.request.user)
                                            .select_related("added_by", "comments", "comments__user")
                                            .prefetch_related('tagged_items__tag'))
 
@@ -32,7 +37,7 @@ class BaseCRUDMixin(object):
 
     def get_queryset(self):
         return (super(BaseCRUDMixin, self).get_queryset()
-                                          .filter(deleted=False) # TODO filter(deleted=False, added_by=self.request.user)
+                                          .filter(deleted=False)  #TODO: filter(deleted=False, added_by=self.request.user)
                                           .select_related("added_by", "comments", "comments__user")
                                           .prefetch_related('tagged_items__tag'))
 
@@ -95,3 +100,11 @@ class BaseDeleteView(BaseCRUDMixin, DeleteView):
         self.object = self.get_object()
         self.api_function(self.object)
         return HttpResponseRedirect(self.get_success_url())
+
+
+class SearchView(View):
+
+    def get(self, request, *args, **kwargs):
+        term = request.GET.get("q")
+        content = search(term) if term else []
+        return HttpResponse(content=dumps(content), content_type="application/json")

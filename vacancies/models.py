@@ -34,7 +34,7 @@ class Vacancy(Base):
                             (3, u"Вакансия мечты")
                             )
     type = models.PositiveSmallIntegerField(verbose_name=u"тип вакансии", choices=VACANCY_TYPE_CHOICES)
-    why = models.TextField(verbose_name=u"Почему добавлена", null=True, blank=True)
+    why = models.TextField(verbose_name=u"Почему добавлена", null=True, blank=True, db_index=True)
 
     def get_new_heading(self):
         pass

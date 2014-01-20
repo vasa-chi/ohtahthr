@@ -7,14 +7,15 @@ from comments.urls import urls as comments_urls
 from rating.urls import urls as rating_urls
 from tags.urls import urls as tags_urls
 from feedback.urls import urls as feeback_urls
+from views import SearchView
 admin.autodiscover()
 
 urlpatterns = patterns("",
 
     url(r"^admin/", include(admin.site.urls)),
-
     #url('', include('social.apps.django_app.urls', namespace='social'))
     url(r"^$", name="index", view=TemplateView.as_view(template_name="base.html")),
+    url(r"^search/$", name="search", view=SearchView.as_view())
 )
 urlpatterns += interviews_urls
 urlpatterns += vacancies_urls

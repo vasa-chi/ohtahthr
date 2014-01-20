@@ -10,13 +10,13 @@
             <div class="media-heading">
                 <a href="" class="comment_id"># {{ comment.pk }}</a>
                 <a href="#">{{ comment.user }}</a>
-          <span class="comment-rating-wrapper">
-            <a><i class="glyphicon glyphicon-chevron-up"></i></a>
-            <span class="comment-rating">{{ comment.rating }}</span>
-            <a><i class="glyphicon glyphicon-chevron-down"></i></a>
-            <a><i class="glyphicon glyphicon-star-empty"></i></a>
-            <a class="btn btn-xs btn-warning" id="report_abuse_link" href="{% url "create_feedback_for" objtype=2 pk=comment.pk %}">Пожаловаться</a>
-          </span>
+                <span class="comment-rating-wrapper">
+                    <a><i class="glyphicon glyphicon-chevron-up"></i></a>
+                    <span class="comment-rating">{{ comment.rating }}</span>
+                    <a><i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <a><i class="glyphicon glyphicon-star-empty"></i></a>
+                    <a class="btn btn-xs btn-warning" id="report_abuse_link" href="{% url "create_feedback_for" objtype=2 pk=comment.pk %}">Пожаловаться</a>
+                </span>
                 <small class="pull-right">
                     {% if not comment.date_edited %}
                         {{ comment.date|timesince }}
@@ -26,7 +26,9 @@
                 </small>
                 {#          TODO: display date as vasa said #}
             </div>
-            <div class="comment-text"><p>{{ comment.text }}</p></div>
+            <div class="comment-text">
+                <p>{{ comment.text }}</p>
+            </div>
             <small class="action-reply"><i class="fa fa-reply"></i> ответить</small>
             {% if comment.user_id == request.user.pk %}
                 <small class="action-edit"><i class="fa fa-pencil"></i> изменить</small>

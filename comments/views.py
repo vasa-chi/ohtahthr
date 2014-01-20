@@ -34,4 +34,4 @@ class CommentUpdateView(View):
         user = User.objects.get(pk=1)  # TODO: remove placeholder
         comment_data = loads(request.POST["comment_data"])
         comment = update_comment(comment_data["comment_pk"], user, comment_data["text"])
-        return render(request, "comments/comment.html", {"comment":comment})
+        return render(request, "comments/comment.html", {"comment": comment})

@@ -46,10 +46,11 @@
             {% include "tags/tags.html" with tags=item.tags.all %}
             <div class="hr-info clearfix">
                 <div class="pull-left">
-                    <a href=""><i class="glyphicon glyphicon-star-empty"></i></a>
-                    <a href=""><i class="glyphicon glyphicon-chevron-up" style="margin-left: 3em"></i></a>
+                    <a href=""><span class="glyphicon glyphicon-star-empty"></span></a>
+                    <a href=""><span class="glyphicon glyphicon-comment">{{ item.comments.count }}</span></a> {#  TODO: anchor to comments #}
+                    <a href=""><span class="glyphicon glyphicon-chevron-up" style="margin-left: 3em"></span></a>
                     {{ item.rating }}
-                    <a href=""><i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <a href=""><span class="glyphicon glyphicon-chevron-down"></span></a>
                     <a class="btn btn-xs btn-warning" id="report_abuse_link" href="{% url "create_feedback_for" objtype=item.get_item_type pk=item.pk %}">Пожаловаться</a>
                 </div>
                 <div class="pull-right">
